@@ -22,7 +22,7 @@ class BossBlog extends StatelessWidget {
                 color: Colors.black,
                 fontSize: 50.0,
                 fontWeight: FontWeight.w400,
-                // fontFamily: 'Playfair'
+                fontFamily: 'Playfair'
               ),
             ),
           ),
