@@ -1,28 +1,20 @@
-import 'package:boss_blog/screens/login_screen.dart';
-import 'screens/onboarding_screen.dart';
+import 'package:boss_blog/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'constants.dart';
-import 'screens/welcome_screen.dart';
 
 void main() {
-  runApp(BossBlog());
+  runApp(const BossBlog());
 }
 
 class BossBlog extends StatelessWidget {
+  const BossBlog({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: WelcomeScreen(),
-      initialRoute: 'onboarding_screen',
-      // routes:{
-      //   OnboardingScreen.onboard: (context) => OnboardingScreen(),
-      //   'welcome_screen': (context) => WelcomeScreen(),
-      //   'login_screen': (context) => LoginScreen(),
-      // },
+    return  MaterialApp(theme: ThemeData(primaryColor: Color(0xff4f85f6), secondaryHeaderColor: Color(0xff18336f),textTheme: TextTheme(titleLarge: GoogleFonts.poppins(fontSize: 50),bodyMedium: GoogleFonts.josefinSans(fontSize: 35),displaySmall: GoogleFonts.libreBaskerville(fontSize: 14),),),
+      debugShowCheckedModeBanner: true,
+      home: const OnboardingScreen(),
     );
   }
 }
