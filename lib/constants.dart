@@ -22,3 +22,5 @@ const kLoginStyle = TextStyle(
     fontSize: 20.0,
     fontWeight: FontWeight.w400
 );
+const kPirmaryColor = Color(0xff4f85f6);
+const kSecondaryColor = Color(0xff18336f);

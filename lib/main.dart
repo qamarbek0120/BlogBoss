@@ -12,7 +12,14 @@ class BossBlog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(theme: ThemeData(primaryColor: Color(0xff4f85f6), secondaryHeaderColor: Color(0xff18336f),textTheme: TextTheme(titleLarge: GoogleFonts.poppins(fontSize: 50),bodyMedium: GoogleFonts.josefinSans(fontSize: 35),displaySmall: GoogleFonts.libreBaskerville(fontSize: 14),),),
+    return MaterialApp(
+      theme: ThemeData(
+        textTheme: TextTheme(
+          titleLarge: GoogleFonts.poppins(fontSize: 50),
+          bodyMedium: GoogleFonts.josefinSans(fontSize: 35),
+          displaySmall: GoogleFonts.libreBaskerville(fontSize: 14),
+        ),
+      ),
       debugShowCheckedModeBanner: true,
       home: const OnboardingScreen(),
     );

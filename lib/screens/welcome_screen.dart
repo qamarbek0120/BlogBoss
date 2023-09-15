@@ -1,7 +1,7 @@
 import 'package:boss_blog/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:boss_blog/constants.dart';
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 class WelcomeScreen extends StatelessWidget {
@@ -81,7 +81,7 @@ class RoundedButton extends StatelessWidget {
         minWidth: double.infinity,
         height: 50,
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: ,
+          side: BorderSide(
             color: Color(0xFF18336f)
           ),
           borderRadius: BorderRadius.circular(20.0),
