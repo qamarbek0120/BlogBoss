@@ -20,7 +20,7 @@ class BossBlog extends StatelessWidget {
           displaySmall: GoogleFonts.libreBaskerville(fontSize: 14),
         ),
       ),
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       home: const OnboardingScreen(),
     );
   }
