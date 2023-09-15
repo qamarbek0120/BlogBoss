@@ -22,15 +22,15 @@ class WelcomeScreen extends StatelessWidget {
                 child: Image.asset('images/welcome_screen.png'),
               )
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 40.0),
+            const Padding(
+              padding:  EdgeInsets.only(top: 40.0),
               child: Column(
                 children: [
                   Text('Welcome to Boss Blog',
                   textAlign: TextAlign.center,
                   style: kTitleTextStyle,),
                   Padding(
-                    padding: const EdgeInsets.all(15.0),
+                    padding:  EdgeInsets.all(15.0),
                     child: Text('Lorem ipsum doler lorem ipodum',
                       textAlign: TextAlign.center,
                       style: kParagraphTextStyle,),
@@ -38,7 +38,7 @@ class WelcomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 70,
             ),
             RoundedButton(
@@ -49,7 +49,7 @@ class WelcomeScreen extends StatelessWidget {
               },
               style: kFilledButtonStyle
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             RoundedButton(
@@ -67,7 +67,7 @@ class WelcomeScreen extends StatelessWidget {
                 children: <Widget>[
                   TextButton(
                     onPressed:(){},
-                    child: Icon(
+                    child:const Icon(
                       FontAwesomeIcons.google,
                       color: kSecondaryColor,
                       size: 30,
@@ -75,7 +75,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: (){},
-                    child: Icon(
+                    child:const Icon(
                       FontAwesomeIcons.facebook,
                       size: 30,
                       color: kSecondaryColor,

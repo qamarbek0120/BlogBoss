@@ -1,7 +1,5 @@
 import 'package:boss_blog/components/rounded_button.dart';
 import 'package:flutter/material.dart';
-import 'onboarding_screen.dart';
-import 'package:boss_blog/constants.dart';
 import 'package:boss_blog/constants.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -14,7 +12,7 @@ class LoginScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Container(
             width: double.infinity,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('images/background.png'),
                     fit: BoxFit.cover
@@ -31,7 +29,7 @@ class LoginScreen extends StatelessWidget {
                 Container(
                   width: double.infinity,
                   height: 500,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(80),
                       topRight: Radius.circular(80)
@@ -43,10 +41,10 @@ class LoginScreen extends StatelessWidget {
                     MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Container(
-                        child: Column(
+                        child: const Column(
                           children: <Widget>[
                             Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 20.0),
+                              padding:  EdgeInsets.symmetric(vertical: 20.0),
                               child: Text('Login',style: kLoginTextStyle,),
                             ),
                             Text(
@@ -73,7 +71,7 @@ class LoginScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: <Widget>[
-                                Text(
+                                const Text(
                                   'Don`t have an account?',
                                   style: TextStyle(
                                     color: Colors.black45,
@@ -83,7 +81,7 @@ class LoginScreen extends StatelessWidget {
                                 ),
                                 TextButton(
                                     onPressed: (){},
-                                    child: Text(
+                                    child: const Text(
                                       'Sign up',
                                       style: TextStyle(
                                         color: Colors.black54,

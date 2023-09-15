@@ -11,6 +11,7 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
+
   int currentIndex = 0;
   late PageController _controller ;
 
@@ -46,7 +47,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         children: [
                           Image.asset(content[i].image),
                           Padding(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 vertical: 20.0, horizontal: 20),
                             child: Column(
                               children: [

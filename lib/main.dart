@@ -1,9 +1,7 @@
-import 'package:boss_blog/screens/login_screen.dart';
+
 import 'package:boss_blog/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'constants.dart';
-
 void main() {
   runApp(const BossBlog());
 }
