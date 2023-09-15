@@ -3,38 +3,59 @@ import 'onboarding_screen.dart';
 import 'package:boss_blog/constants.dart';
 
 class LoginScreen extends StatelessWidget {
-  static String login = 'login_screen';
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('images/background.png'),
+                  fit: BoxFit.cover
+            )
+          ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(top: 20, bottom: 20),
-                child: TextField(
-                  keyboardType: TextInputType.emailAddress,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      hintText: 'Enter you username'
-                  ),
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 90),
+                  child: Image.asset('images/logo1.png',
+                  width: 150,),
                 ),
-              ),
-              SizedBox(
-                height: 5.0,
-              ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 20.0),
-                child: TextField(
-                  keyboardType: TextInputType.visiblePassword,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      hintText: 'Enter you password'
+              Container(
+                width: double.infinity,
+                height: 500,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(80),
+                    topRight: Radius.circular(80)
                   ),
+                  color: Colors.white
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      child: Column(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 20.0),
+                            child: Text('Login',style: kLoginTextStyle,),
+                          ),
+                          Text(
+                            'Sign in to continue',
+                            style: TextStyle(
+                              color: Colors.black45,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
                 ),
               )
             ],

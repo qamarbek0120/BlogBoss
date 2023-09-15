@@ -19,7 +19,7 @@ class WelcomeScreen extends StatelessWidget {
             Container(
               child: Padding(
                 padding: const EdgeInsets.only(top: 65.0),
-                child: Image.network('https://www.pngall.com/wp-content/uploads/12/Illustration-PNG.png'),
+                child: Image.asset('images/welcome_screen.png'),
               )
             ),
             Padding(
