@@ -1,6 +1,5 @@
 import 'package:boss_blog/screens/login_screen.dart';
 import 'package:boss_blog/screens/onboarding_screen.dart';
-import 'package:boss_blog/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'constants.dart';
@@ -23,7 +22,7 @@ class BossBlog extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: const WelcomeScreen(),
+      home:  OnboardingScreen(),
     );
   }
 }

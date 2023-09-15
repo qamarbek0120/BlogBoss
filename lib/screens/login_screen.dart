@@ -67,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                             login_button(input: 'Password'),
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20.0),
-                              child: RoundedButton(colorr: kPirmaryColor, title: 'Log in', onPressed: (){}, style: kLoginStyle),
+                              child: RoundedButton(colorr: kPrimaryColor, title: 'Log in', onPressed: (){}, style: kFilledButtonStyle),
                             ),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.center,

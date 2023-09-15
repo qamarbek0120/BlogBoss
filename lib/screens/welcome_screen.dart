@@ -28,12 +28,12 @@ class WelcomeScreen extends StatelessWidget {
                 children: [
                   Text('Welcome to Boss Blog',
                   textAlign: TextAlign.center,
-                  style: kWelcomeFontStyle,),
+                  style: kTitleTextStyle,),
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Text('Lorem ipsum doler lorem ipodum',
                       textAlign: TextAlign.center,
-                      style: kWelcomeFontParagraph,),
+                      style: kParagraphTextStyle,),
                   )
                 ],
               ),
@@ -42,12 +42,12 @@ class WelcomeScreen extends StatelessWidget {
               height: 70,
             ),
             RoundedButton(
-              colorr: kPirmaryColor,
+              colorr: kPrimaryColor,
               title: 'Log In',
               onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
               },
-              style: kLoginStyle
+              style: kFilledButtonStyle
             ),
             SizedBox(
               height: 25,
@@ -58,7 +58,7 @@ class WelcomeScreen extends StatelessWidget {
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
                 },
-                style: kRegisterStyle
+                style: kOutlinedButtonStyle
                 ),
             Padding(
               padding: const EdgeInsets.only(top: 20),
