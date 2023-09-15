@@ -2,6 +2,7 @@ import 'package:boss_blog/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:boss_blog/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:boss_blog/components/rounded_button.dart';
 
 
 class WelcomeScreen extends StatelessWidget {
@@ -38,10 +39,10 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 100,
+              height: 70,
             ),
             RoundedButton(
-              colorr: Color(0xFF18336f),
+              colorr: kPirmaryColor,
               title: 'Log In',
               onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
@@ -52,13 +53,37 @@ class WelcomeScreen extends StatelessWidget {
               height: 25,
             ),
             RoundedButton(
-                colorr: Color(0xFFefefef),
+                colorr: Colors.white,
                 title: 'Sign Up',
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
                 },
                 style: kRegisterStyle
-                )
+                ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  TextButton(
+                    onPressed:(){},
+                    child: Icon(
+                      FontAwesomeIcons.google,
+                      color: kSecondaryColor,
+                      size: 30,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: (){},
+                    child: Icon(
+                      FontAwesomeIcons.facebook,
+                      size: 30,
+                      color: kSecondaryColor,
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
@@ -66,33 +91,3 @@ class WelcomeScreen extends StatelessWidget {
   }
 }
 
-class RoundedButton extends StatelessWidget {
-  RoundedButton({required this.colorr, required this.title, required this.onPressed, required this.style});
-  final Color colorr;
-  final String title;
-  final void Function()? onPressed;
-  final TextStyle style;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: MaterialButton(onPressed: onPressed,
-        minWidth: double.infinity,
-        height: 50,
-        shape: RoundedRectangleBorder(
-          side: BorderSide(
-            color: Color(0xFF18336f)
-          ),
-          borderRadius: BorderRadius.circular(20.0),
-        ),
-        color: colorr,
-        child: Text(
-          title,
-          style: style,
-        ),
-
-      ),
-    );
-  }
-}

@@ -13,14 +13,14 @@ const kWelcomeFontParagraph = TextStyle(
   fontSize: 20.0,
 );
 const kRegisterStyle = TextStyle(
-  color: Colors.black,
+  color: kPirmaryColor,
   fontSize: 20.0,
-  fontWeight: FontWeight.w400
+  fontWeight: FontWeight.w500
 );
 const kLoginStyle = TextStyle(
     color: Colors.white,
     fontSize: 20.0,
-    fontWeight: FontWeight.w400
+    fontWeight: FontWeight.w500
 );
 const kPirmaryColor = Color(0xff4f85f6);
 const kSecondaryColor = Color(0xff18336f);
