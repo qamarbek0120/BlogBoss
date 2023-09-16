@@ -47,7 +47,7 @@ class login_button extends StatelessWidget {
                 fontSize: 18,
                 fontWeight: FontWeight.bold
             ),
-            enabledBorder: OutlineInputBorder(
+            border: OutlineInputBorder(
                 borderSide: BorderSide(
                     width: 2, color: kSecondaryColor
                 ),

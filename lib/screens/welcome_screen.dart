@@ -39,7 +39,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 70,
+              height: 50,
             ),
             RoundedButton(
               colorr: kPrimaryColor,
@@ -76,7 +76,7 @@ class WelcomeScreen extends StatelessWidget {
                   TextButton(
                     onPressed: (){},
                     child:const Icon(
-                      FontAwesomeIcons.facebook,
+                      FontAwesomeIcons.telegram,
                       size: 30,
                       color: kSecondaryColor,
                     ),
