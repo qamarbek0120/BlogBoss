@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                   Container(
-                    height: 300,
+                    height: 250,
                     child: Image.asset('images/logo1.png',
                     width: 150,),
                   ),
@@ -48,7 +48,7 @@ class LoginScreen extends StatelessWidget {
                       Container(
                         child: Column(
                           children: <Widget>[
-                            login_button(input: "Name"),
+                            login_button(input: "Email"),
                             login_button(input: 'Password'),
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20.0),

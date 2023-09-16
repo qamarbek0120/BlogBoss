@@ -39,7 +39,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 70,
+              height: 50,
             ),
             RoundedButton(
               colorr: kPrimaryColor,
