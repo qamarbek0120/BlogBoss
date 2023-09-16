@@ -76,7 +76,7 @@ class WelcomeScreen extends StatelessWidget {
                   TextButton(
                     onPressed: (){},
                     child:const Icon(
-                      FontAwesomeIcons.facebook,
+                      FontAwesomeIcons.telegram,
                       size: 30,
                       color: kSecondaryColor,
                     ),

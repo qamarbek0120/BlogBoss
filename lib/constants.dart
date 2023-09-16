@@ -26,6 +26,26 @@ const kLoginTextStyle = TextStyle(
   fontSize: 60,
   fontWeight: FontWeight.bold
 );
+const mainPersonStyle = TextStyle(
+  color: Colors.black,
+  fontSize: 20.0,
+  fontWeight: FontWeight.bold,
+);
+const followStyle = TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.normal,
+  fontSize: 15
+);
+const primarystatusStyle = TextStyle(
+  color: Colors.white,
+  fontSize: 16,
+  fontWeight: FontWeight.w600
+);
+const secondarystatusStyle = TextStyle(
+    color: Colors.black,
+    fontSize: 15,
+    fontWeight: FontWeight.w600
+);
 const kPrimaryColor = Color(0xff4f85f6);
 const kSecondaryColor = Color(0xff18336f);
 const kBackgroundColor = Color(0xffefefef);
