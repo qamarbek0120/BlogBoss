@@ -1,6 +1,4 @@
-
 import 'package:boss_blog/screens/onboarding_screen.dart';
-import 'package:boss_blog/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 void main() {
@@ -21,7 +19,7 @@ class BossBlog extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: true,
-      routes: ,
+      home: OnboardingScreen(),
     );
   }
 }
