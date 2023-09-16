@@ -28,3 +28,4 @@ const kLoginTextStyle = TextStyle(
 );
 const kPrimaryColor = Color(0xff4f85f6);
 const kSecondaryColor = Color(0xff18336f);
+const kBackgroundColor = Color(0xffefefef);
