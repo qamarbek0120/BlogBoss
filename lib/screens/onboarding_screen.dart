@@ -11,15 +11,15 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
-
   int currentIndex = 0;
-  late PageController _controller ;
+  late PageController _controller;
 
   @override
   void initState() {
     _controller = PageController(initialPage: 0);
     super.initState();
   }
+
   @override
   void dispose() {
     _controller.dispose();
@@ -33,11 +33,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           child: Column(
             children: [
               Expanded(
-                child: PageView.builder(controller: _controller
-                  ,
+                child: PageView.builder(
+                  controller: _controller,
                   onPageChanged: (int index) {
-                      setState((){currentIndex = index;});
-
+                    setState(() {
+                      currentIndex = index;
+                    });
                   },
                   itemCount: 3,
                   itemBuilder: (__, i) {
@@ -86,10 +87,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: Container(
                   child: RoundedButton(
                     colorr: kPrimaryColor,
-                    title: currentIndex==content.length -1 ?'Get started':'Next',
+                    title: currentIndex == content.length - 1
+                        ? 'Get started'
+                        : 'Next',
                     onPressed: () {
-                      if(currentIndex==content.length -1){Navigator.push(context, MaterialPageRoute(builder: (context)=>WelcomeScreen()));}
-                      _controller.nextPage(duration: Duration(milliseconds: 200), curve: Curves.bounceIn);
+                      if (currentIndex == content.length - 1) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => WelcomeScreen()));
+                      }
+                      _controller.nextPage(
+                          duration: Duration(milliseconds: 200),
+                          curve: Curves.bounceIn);
                     },
                     style: kFilledButtonStyle,
                   ),
@@ -101,14 +111,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
     );
   }
-  Container buildDot(int index, BuildContext context) {
-    return Container(
+
+  AnimatedContainer buildDot(int index, BuildContext context) {
+    return AnimatedContainer(
       width: currentIndex == index ? 35 : 10,
       height: 10,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: kPrimaryColor,
-      ),
+        color: currentIndex == index? kPrimaryColor:Colors.grey,
+      ), duration: Duration(milliseconds: 200),
     );
   }
 }
