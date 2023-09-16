@@ -1,11 +1,11 @@
-import 'package:boss_blog/components/rounded_button.dart';
-import 'package:boss_blog/screens/registration_screen.dart';
+import 'package:boss_blog/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:boss_blog/constants.dart';
 import 'components/registration_form.dart';
+import 'package:boss_blog/components/rounded_button.dart';
+import 'package:boss_blog/constants.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegistratioScreen extends StatelessWidget {
+  const RegistratioScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,44 +15,44 @@ class LoginScreen extends StatelessWidget {
           child: Container(
             width: double.infinity,
             decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('images/background.png'),
+                image: DecorationImage(
+                    image: AssetImage('images/background.png'),
                     fit: BoxFit.cover
-              )
+                )
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                  Container(
-                    height: 300,
-                    child: Image.asset('images/logo1.png',
+                Container(
+                  height: 300,
+                  child: Image.asset('images/logo1.png',
                     width: 150,),
-                  ),
+                ),
                 Container(
                   width: double.infinity,
                   height: 500,
                   decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(80),
-                      topRight: Radius.circular(80)
-                    ),
-                    color: Colors.white
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(80),
+                          topRight: Radius.circular(80)
+                      ),
+                      color: Colors.white
                   ),
                   child: Column(
                     mainAxisAlignment:
                     MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Container(
-                        child: registration_form(mainTitle: "Login", reference: "Sign in to continue",),
+                        child: registration_form(mainTitle: "Signup", reference: "Create an account",),
                       ),
                       Container(
                         child: Column(
                           children: <Widget>[
-                            login_button(input: "Name"),
-                            login_button(input: 'Password'),
+                            login_button(input: "Create E-mail"),
+                            login_button(input: 'Create Password'),
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20.0),
-                              child: RoundedButton(colorr: kPrimaryColor, title: 'Log in', onPressed: (){}, style: kFilledButtonStyle),
+                              child: RoundedButton(colorr: kPrimaryColor, title: 'Sign Up', onPressed: (){}, style: kFilledButtonStyle),
                             ),
                             Column(
                               children: <Widget>[
@@ -60,20 +60,12 @@ class LoginScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: <Widget>[
-                                    const Text(
-                                      'Don`t have an account?',
-                                      style: TextStyle(
-                                        color: Colors.black45,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
                                     TextButton(
                                         onPressed: (){
-                                          Navigator.push(context, MaterialPageRoute(builder: (context)=> RegistratioScreen()));
+                                          Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
                                         },
                                         child: const Text(
-                                          'Sign up',
+                                          'Already have an account?',
                                           style: TextStyle(
                                               color: Colors.black54,
                                               fontWeight: FontWeight.bold,
@@ -83,16 +75,6 @@ class LoginScreen extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                TextButton(
-                                    onPressed:(){},
-                                    child: Text(
-                                      'Forgot Password?',
-                                      style: TextStyle(
-                                          color: Colors.black54,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20
-                                      ),
-                                    ))
                               ],
                             )
 
@@ -107,9 +89,6 @@ class LoginScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
+    );;
   }
 }
-
-
-
