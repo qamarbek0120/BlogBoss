@@ -1,4 +1,4 @@
-
+import 'package:flutter/material.dart';
 
 class OnboardingFillings {
   String image;
@@ -20,3 +20,5 @@ List<OnboardingFillings> content = [
       title: 'Upload Memories',
       description: 'lorem ipsum ipsadfsad asdf sdfasd asdfadsfasdfas dfasdfas safasff sfafm ipsum ipodum doler lorem ipsum ipodum doler'),
 ];
+
+
