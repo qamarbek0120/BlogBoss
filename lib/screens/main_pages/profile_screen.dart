@@ -211,7 +211,8 @@ class _ProfilePageState extends State<ProfilePage> {
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         // navigation bar padding
         tabs: [
-          GButton(
+          GButton(onPressed: (){Navigator.push(context,
+              MaterialPageRoute(builder: (context) => HomeScreen()));},
             icon: Icons.house,
             text: 'Home',textStyle: TextStyle(fontSize: 20),
           ),

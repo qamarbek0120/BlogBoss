@@ -5,7 +5,7 @@ import 'package:boss_blog/screens/main_pages/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:intl/intl.dart';
+import 'profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -32,42 +32,51 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: [
                     Blogs(
-                        formattedDate: formattedDate,
-                        header: 'Shockin News',
-                        image: 'assets/blog_images/joxa.jpg',
-                        category: "Entertainment",
+                      formattedDate: formattedDate,
+                      header: 'Shockin News',
+                      image: 'assets/blog_images/joxa.jpg',
+                      category: "Entertainment",
                     ),
                     Blogs(
-                        formattedDate: formattedDate,
-                        header: 'Shockin News',
-                        image: 'assets/blog_images/joxa.jpg',
-                        category: "Entertainment",
+                      formattedDate: formattedDate,
+                      header: 'Shockin News',
+                      image: 'assets/blog_images/joxa.jpg',
+                      category: "Entertainment",
                     ),
-                    Blogs(category: "Entertainment",
-                        formattedDate: formattedDate,
-                        header: 'Shockin News',
-                        image: 'assets/blog_images/joxa.jpg',),
-                    Blogs(category: 'Industry',
-                        formattedDate: formattedDate,
-                        header: 'Shockin News',
-                        image: 'assets/blog_images/joxa.jpg',),
-                    Blogs(category: 'Industry',
-                        formattedDate: formattedDate,
-                        header: 'Shockin News',
-                        image: 'assets/blog_images/joxa.jpg'),
-                    Blogs(category: 'Industry',
-                        formattedDate: formattedDate,
-                        header: 'Shockin News',
-                        image: 'assets/blog_images/joxa.jpg'),
-                    Blogs(category: 'Industry',
+                    Blogs(
+                      category: "Entertainment",
+                      formattedDate: formattedDate,
+                      header: 'Shockin News',
+                      image: 'assets/blog_images/joxa.jpg',
+                    ),
+                    Blogs(
+                      category: 'Industry',
+                      formattedDate: formattedDate,
+                      header: 'Shockin News',
+                      image: 'assets/blog_images/joxa.jpg',
+                    ),
+                    Blogs(
+                        category: 'Industry',
                         formattedDate: formattedDate,
                         header: 'Shockin News',
                         image: 'assets/blog_images/joxa.jpg'),
-                    Blogs(category: 'Industry',
+                    Blogs(
+                        category: 'Industry',
                         formattedDate: formattedDate,
                         header: 'Shockin News',
                         image: 'assets/blog_images/joxa.jpg'),
-                    Blogs(category: 'Industry',
+                    Blogs(
+                        category: 'Industry',
+                        formattedDate: formattedDate,
+                        header: 'Shockin News',
+                        image: 'assets/blog_images/joxa.jpg'),
+                    Blogs(
+                        category: 'Industry',
+                        formattedDate: formattedDate,
+                        header: 'Shockin News',
+                        image: 'assets/blog_images/joxa.jpg'),
+                    Blogs(
+                        category: 'Industry',
                         formattedDate: formattedDate,
                         header: 'Shockin News',
                         image: 'assets/blog_images/joxa.jpg'),
@@ -196,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: const GNav(
+      bottomNavigationBar: GNav(
         rippleColor: Colors.white70,
         tabBorderRadius: 15,
         curve: Curves.bounceIn,
@@ -230,6 +239,10 @@ class _HomeScreenState extends State<HomeScreen> {
             textStyle: TextStyle(fontSize: 20),
           ),
           GButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()));
+            },
             icon: FontAwesomeIcons.user,
             text: 'Profile',
             textStyle: TextStyle(fontSize: 20),
