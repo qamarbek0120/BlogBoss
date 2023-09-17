@@ -21,174 +21,176 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Column(
-              children: [
-                Blogs(
-                    formattedDate: formattedDate,
-                    header: 'Shockin News',
-                    image: 'assets/blog_images/joxa.jpg',
-                    category: "Entertainment",
-                ),
-                Blogs(
-                    formattedDate: formattedDate,
-                    header: 'Shockin News',
-                    image: 'assets/blog_images/joxa.jpg',
-                    category: "Entertainment",
-                ),
-                Blogs(category: "Entertainment",
-                    formattedDate: formattedDate,
-                    header: 'Shockin News',
-                    image: 'assets/blog_images/joxa.jpg',),
-                Blogs(category: 'Industry',
-                    formattedDate: formattedDate,
-                    header: 'Shockin News',
-                    image: 'assets/blog_images/joxa.jpg',),
-                Blogs(category: 'Industry',
-                    formattedDate: formattedDate,
-                    header: 'Shockin News',
-                    image: 'assets/blog_images/joxa.jpg'),
-                Blogs(category: 'Industry',
-                    formattedDate: formattedDate,
-                    header: 'Shockin News',
-                    image: 'assets/blog_images/joxa.jpg'),
-                Blogs(category: 'Industry',
-                    formattedDate: formattedDate,
-                    header: 'Shockin News',
-                    image: 'assets/blog_images/joxa.jpg'),
-                Blogs(category: 'Industry',
-                    formattedDate: formattedDate,
-                    header: 'Shockin News',
-                    image: 'assets/blog_images/joxa.jpg'),
-                Blogs(category: 'Industry',
-                    formattedDate: formattedDate,
-                    header: 'Shockin News',
-                    image: 'assets/blog_images/joxa.jpg'),
-              ],
+      body: SafeArea(
+        child: Stack(
+          children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  Blogs(
+                      formattedDate: formattedDate,
+                      header: 'Shockin News',
+                      image: 'assets/blog_images/joxa.jpg',
+                      category: "Entertainment",
+                  ),
+                  Blogs(
+                      formattedDate: formattedDate,
+                      header: 'Shockin News',
+                      image: 'assets/blog_images/joxa.jpg',
+                      category: "Entertainment",
+                  ),
+                  Blogs(category: "Entertainment",
+                      formattedDate: formattedDate,
+                      header: 'Shockin News',
+                      image: 'assets/blog_images/joxa.jpg',),
+                  Blogs(category: 'Industry',
+                      formattedDate: formattedDate,
+                      header: 'Shockin News',
+                      image: 'assets/blog_images/joxa.jpg',),
+                  Blogs(category: 'Industry',
+                      formattedDate: formattedDate,
+                      header: 'Shockin News',
+                      image: 'assets/blog_images/joxa.jpg'),
+                  Blogs(category: 'Industry',
+                      formattedDate: formattedDate,
+                      header: 'Shockin News',
+                      image: 'assets/blog_images/joxa.jpg'),
+                  Blogs(category: 'Industry',
+                      formattedDate: formattedDate,
+                      header: 'Shockin News',
+                      image: 'assets/blog_images/joxa.jpg'),
+                  Blogs(category: 'Industry',
+                      formattedDate: formattedDate,
+                      header: 'Shockin News',
+                      image: 'assets/blog_images/joxa.jpg'),
+                  Blogs(category: 'Industry',
+                      formattedDate: formattedDate,
+                      header: 'Shockin News',
+                      image: 'assets/blog_images/joxa.jpg'),
+                ],
+              ),
             ),
-          ),
-          Container(
-            height: 128,
-            margin: EdgeInsets.all(0),
-            decoration: BoxDecoration(color: Colors.white),
-            child: const Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 20.0,top: 50),
-                      child: Text(
-                        'Home',
-                        style: kTitleTextStyle,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 20.0,top: 50),
-                      child: Icon(BootstrapIcons.bell),
-                    ),
-                  ],
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  physics: BouncingScrollPhysics(),
-                  child: Row(
+            Container(
+              height: 78,
+              margin: EdgeInsets.all(0),
+              decoration: BoxDecoration(color: Colors.white),
+              child: const Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CategoryButton(category: '+'),
-                      CategoryButton(
-                        category: 'Industry',
+                      Padding(
+                        padding: EdgeInsets.only(left: 20.0),
+                        child: Text(
+                          'Home',
+                          style: kTitleTextStyle,
+                        ),
                       ),
-                      CategoryButton(
-                        category: 'Industry',
-                      ),
-                      CategoryButton(
-                        category: 'Industry',
-                      ),
-                      CategoryButton(
-                        category: 'Industry',
-                      ),
-                      CategoryButton(
-                        category: 'Fashion',
-                      ),
-                      CategoryButton(
-                        category: 'Fashion',
-                      ),
-                      CategoryButton(
-                        category: 'Fashion',
-                      ),
-                      CategoryButton(
-                        category: 'Fashion',
-                      ),
-                      CategoryButton(
-                        category: 'News',
-                      ),
-                      CategoryButton(
-                        category: 'News',
-                      ),
-                      CategoryButton(
-                        category: 'News',
-                      ),
-                      CategoryButton(
-                        category: 'News',
-                      ),
-                      CategoryButton(
-                        category: 'News',
-                      ),
-                      CategoryButton(
-                        category: 'News',
-                      ),
-                      CategoryButton(
-                        category: 'News',
-                      ),
-                      CategoryButton(
-                        category: 'News',
-                      ),
-                      CategoryButton(
-                        category: 'News',
-                      ),
-                      CategoryButton(
-                        category: 'Blogs',
-                      ),
-                      CategoryButton(
-                        category: 'Blogs',
-                      ),
-                      CategoryButton(
-                        category: 'Blogs',
-                      ),
-                      CategoryButton(
-                        category: 'POV',
-                      ),
-                      CategoryButton(
-                        category: 'Government',
-                      ),
-                      CategoryButton(
-                        category: 'Government',
-                      ),
-                      CategoryButton(
-                        category: 'Government',
-                      ),
-                      CategoryButton(
-                        category: 'Politics',
-                      ),
-                      CategoryButton(
-                        category: 'Politics',
-                      ),
-                      CategoryButton(
-                        category: 'Politics',
-                      ),
-                      CategoryButton(
-                        category: 'Politics',
+                      Padding(
+                        padding: EdgeInsets.only(right: 20.0),
+                        child: Icon(BootstrapIcons.bell),
                       ),
                     ],
                   ),
-                ),
-              ],
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    physics: BouncingScrollPhysics(),
+                    child: Row(
+                      children: [
+                        CategoryButton(category: '+'),
+                        CategoryButton(
+                          category: 'Industry',
+                        ),
+                        CategoryButton(
+                          category: 'Industry',
+                        ),
+                        CategoryButton(
+                          category: 'Industry',
+                        ),
+                        CategoryButton(
+                          category: 'Industry',
+                        ),
+                        CategoryButton(
+                          category: 'Fashion',
+                        ),
+                        CategoryButton(
+                          category: 'Fashion',
+                        ),
+                        CategoryButton(
+                          category: 'Fashion',
+                        ),
+                        CategoryButton(
+                          category: 'Fashion',
+                        ),
+                        CategoryButton(
+                          category: 'News',
+                        ),
+                        CategoryButton(
+                          category: 'News',
+                        ),
+                        CategoryButton(
+                          category: 'News',
+                        ),
+                        CategoryButton(
+                          category: 'News',
+                        ),
+                        CategoryButton(
+                          category: 'News',
+                        ),
+                        CategoryButton(
+                          category: 'News',
+                        ),
+                        CategoryButton(
+                          category: 'News',
+                        ),
+                        CategoryButton(
+                          category: 'News',
+                        ),
+                        CategoryButton(
+                          category: 'News',
+                        ),
+                        CategoryButton(
+                          category: 'Blogs',
+                        ),
+                        CategoryButton(
+                          category: 'Blogs',
+                        ),
+                        CategoryButton(
+                          category: 'Blogs',
+                        ),
+                        CategoryButton(
+                          category: 'POV',
+                        ),
+                        CategoryButton(
+                          category: 'Government',
+                        ),
+                        CategoryButton(
+                          category: 'Government',
+                        ),
+                        CategoryButton(
+                          category: 'Government',
+                        ),
+                        CategoryButton(
+                          category: 'Politics',
+                        ),
+                        CategoryButton(
+                          category: 'Politics',
+                        ),
+                        CategoryButton(
+                          category: 'Politics',
+                        ),
+                        CategoryButton(
+                          category: 'Politics',
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       bottomNavigationBar: const GNav(
         rippleColor: Colors.white70,
