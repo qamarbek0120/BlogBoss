@@ -1,5 +1,5 @@
 import 'dart:ffi';
-
+import 'package:boss_blog/screens/components/essentials.dart';
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:boss_blog/constants.dart';
 import 'package:boss_blog/main.dart';
@@ -7,8 +7,8 @@ import 'package:boss_blog/screens/components/list_page.dart';
 import 'package:boss_blog/screens/main_pages/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import 'components/category_button.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -104,36 +104,4 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class BottomNavBar extends StatelessWidget {
-  final String activePage;
-  const BottomNavBar({
-    super.key,required this.activePage
-  });
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        padding: EdgeInsets.symmetric(vertical: 20),
-        width: double.infinity,
-        decoration: const BoxDecoration(
-          border: Border(
-            top: BorderSide(
-              width: 5,
-              color: kBackgroundColor,
-            ),
-          ),
-          color: Colors.white,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            TextButton(onPressed:(){},child: Icon(activePage==HomeScreen.id?BootstrapIcons.house_door_fill:BootstrapIcons.house_door, size: 30)),
-            TextButton(onPressed:(){},child: Icon(activePage==HomeScreen.id?FontAwesomeIcons.magnifyingGlass:BootstrapIcons.search, size: 30)),
-            TextButton(onPressed:(){},child: Icon(activePage==HomeScreen.id?BootstrapIcons.plus_square_fill:BootstrapIcons.plus_square, size: 30)),
-            TextButton(onPressed:(){Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfilePage()));}, child: Icon(activePage==HomeScreen.id?BootstrapIcons.person_fill:BootstrapIcons.person, size: 30))
-          ],
-        ),
-      ),
-    );
-  }
-}
+

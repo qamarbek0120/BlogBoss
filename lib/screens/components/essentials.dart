@@ -2,14 +2,13 @@ import 'package:boss_blog/screens/components/blogs.dart';
 import 'package:flutter/material.dart';
 import 'package:boss_blog/constants.dart';
 import 'package:boss_blog/screens/components/blogs.dart';
-
-
-
+import 'package:boss_blog/screens/main_pages/home_screen.dart';
+import 'package:bootstrap_icons/bootstrap_icons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:boss_blog/screens/main_pages/profile_screen.dart';
 
 class PageOne extends StatelessWidget {
   const PageOne({super.key});
-
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,15 +57,10 @@ class PageOne extends StatelessWidget {
 }
 class PageTwo extends StatelessWidget {
   const PageTwo({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.center,
-      color: Colors.red,
-      child: Text(
-        'Two',style: TextStyle(color: Colors.white, fontSize: 40),
-      ),
+
     );
   }
 }
@@ -113,6 +107,40 @@ class Essentials extends StatelessWidget {
               fontWeight: FontWeight.normal,
               color: Colors.grey.shade600
           )),
+        ),
+      ),
+    );
+  }
+}
+
+class BottomNavBar extends StatelessWidget {
+  final String activePage;
+  const BottomNavBar({
+    super.key,required this.activePage
+  });
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 20),
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              width: 5,
+              color: kBackgroundColor,
+            ),
+          ),
+          color: Colors.white,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            TextButton(onPressed:(){},child: Icon(activePage==HomeScreen.id?BootstrapIcons.house_door_fill:BootstrapIcons.house_door, size: 30)),
+            TextButton(onPressed:(){},child: Icon(activePage==HomeScreen.id?FontAwesomeIcons.magnifyingGlass:BootstrapIcons.search, size: 30)),
+            TextButton(onPressed:(){},child: Icon(activePage==HomeScreen.id?BootstrapIcons.plus_square_fill:BootstrapIcons.plus_square, size: 30)),
+            TextButton(onPressed:(){Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfilePage()));}, child: Icon(activePage==HomeScreen.id?BootstrapIcons.person_fill:BootstrapIcons.person, size: 30))
+          ],
         ),
       ),
     );
