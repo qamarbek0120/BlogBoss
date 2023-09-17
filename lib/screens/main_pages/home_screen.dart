@@ -9,7 +9,6 @@ import 'profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-
   static const String id = 'HomeScreen';
 
   @override
@@ -19,6 +18,7 @@ class HomeScreen extends StatefulWidget {
 // String formattedDate = DateFormat.yMMMEd().format(DateTime.now());
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -248,6 +248,12 @@ class _HomeScreenState extends State<HomeScreen> {
             textStyle: TextStyle(fontSize: 20),
           ),
         ],
+        selectedIndex: _selectedIndex,
+        onTabChange: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
       ),
     );
   }

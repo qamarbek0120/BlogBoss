@@ -23,7 +23,7 @@ final List<Widget> _pages = [
 final controller = PageController(initialPage: 0);
 
 class _ProfilePageState extends State<ProfilePage> {
-  @override
+  int _selectedIndex = 3;
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -206,30 +206,52 @@ class _ProfilePageState extends State<ProfilePage> {
         // unselected icon color
         activeColor: Colors.black,
         // selected icon and text color
-        iconSize: 35,
+        iconSize: 25,
         // tab button icon size
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
         // navigation bar padding
+        selectedIndex: _selectedIndex,
+        onTabChange: (index){
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
         tabs: [
-          GButton(onPressed: (){Navigator.push(context,
-              MaterialPageRoute(builder: (context) => HomeScreen()));},
-            icon: Icons.house,
-            text: 'Home',textStyle: TextStyle(fontSize: 20),
+          GButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+            },
+            icon: FontAwesomeIcons.house,
+            text: 'Home',
+            textStyle: TextStyle(fontSize: 20),
           ),
           GButton(
-            icon: Icons.search,
-            text: 'Likes',textStyle: TextStyle(fontSize: 20),
+            icon: FontAwesomeIcons.search,
+            text: 'Search',
+            textStyle: TextStyle(fontSize: 20),
           ),
           GButton(
-            icon: Icons.add_box_outlined,
-            text: 'Search',textStyle: TextStyle(fontSize: 20),
+            icon: FontAwesomeIcons.folderPlus,
+            text: 'Create',
+            textStyle: TextStyle(fontSize: 20),
           ),
           GButton(
-            icon: Icons.person,
-            text: 'Profile',textStyle: TextStyle(fontSize: 20),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()));
+            },
+            icon: FontAwesomeIcons.user,
+            text: 'Profile',
+            textStyle: TextStyle(fontSize: 20),
           ),
         ],
-    ),
+        // selectedIndex: _selectedIndex,
+        // onTabChange: (index) {
+        //   setState(() {
+        //     _selectedIndex = index;
+        //   });
+        // },
+      ),
     );
   }
 }
