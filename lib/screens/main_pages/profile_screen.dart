@@ -12,7 +12,14 @@ class ProfilePage extends StatefulWidget {
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
-String formattedDate = DateFormat.yMMMEd().format(DateTime.now());
+
+int _activePage = 0;
+final List<Widget> _pages = [
+  const PageOne(),
+  const PageTwo(),
+  const PageThree()
+];
+final controller = PageController(initialPage: 0);
 
 class _ProfilePageState extends State<ProfilePage> {
   @override
@@ -142,31 +149,33 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                     Container(
-                      decoration: BoxDecoration(
-                          border: Border(
-                              bottom: BorderSide(
-                                  width: 1,
-                                  color: Colors.grey.shade300
-                              )
-                          )
-                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Essentials(
                             text: "Blogs",
+                            onPressed: (){
+                              controller.animateToPage(0, duration: Duration(milliseconds: 200,), curve: Curves.easeIn);
+                            }
                           ),
                           Essentials(
                             text: "Replies",
+                            onPressed: (){
+                              controller.animateToPage(1, duration: Duration(milliseconds: 200,), curve: Curves.easeIn);
+                            }
                           ),
                           Essentials(
                             text: "Bookmarks",
+                            onPressed: (){
+                              controller.animateToPage(2, duration: Duration(milliseconds: 200,), curve: Curves.easeIn);
+                            }
                           )
                         ],
                       ),
                     ),
                     Container(
                       width: double.infinity,
+                      height: 500,
                       decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
@@ -175,54 +184,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                           ],
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Container(
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.vertical,
-                            child: Column(
-                              children: <Widget>[
-                                Blogs(
-                                  formattedDate: formattedDate,
-                                  header: 'Main Header',
-                                  image: 'images/logo1.png',
-                                ),
-                                Blogs(
-                                  formattedDate: formattedDate,
-                                  header: 'Main Header',
-                                  image: 'images/logo1.png',
-                                ),
-                                Blogs(
-                                  formattedDate: formattedDate,
-                                  header: 'Main Header',
-                                  image: 'images/logo1.png',
-                                ),
-                                Blogs(
-                                  formattedDate: formattedDate,
-                                  header: 'Main Header',
-                                  image: 'images/logo1.png',
-                                ),
-                                Blogs(
-                                  formattedDate: formattedDate,
-                                  header: 'Main Header',
-                                  image: 'images/logo1.png',
-                                ),
-                                Blogs(
-                                  formattedDate: formattedDate,
-                                  header: 'Main Header',
-                                  image: 'images/logo1.png',
-                                ),
-                                Blogs(
-                                  formattedDate: formattedDate,
-                                  header: 'Main Header',
-                                  image: 'images/logo1.png',
-                                ),
-                              ],
-                            ),
-                          )
-                        ),
-
-                      ),
+                      child: Contents(),
                     )
                   ],
                 ),
@@ -235,3 +197,25 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 }
+
+class Contents extends StatelessWidget {
+  const Contents({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      child: PageView(
+        controller: controller,
+        children: [
+          PageOne(),
+          PageTwo(),
+          PageThree()
+        ],
+      ),
+    );
+  }
+}
+

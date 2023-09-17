@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 const kTitleTextStyle = TextStyle(
   color: Colors.black,
@@ -49,3 +50,4 @@ const secondarystatusStyle = TextStyle(
 const kPrimaryColor = Color(0xff4f85f6);
 const kSecondaryColor = Color(0xff18336f);
 const kBackgroundColor = Color(0xffefefef);
+String formattedDate = DateFormat.yMMMEd().format(DateTime.now());
