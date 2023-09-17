@@ -39,49 +39,57 @@ class _HomeScreenState extends State<HomeScreen> {
                     image: 'assets/blog_images/joxa.jpg',
                     category: "Entertainment",
                 ),
-                Blogs(
+                Blogs(category: "Entertainment",
                     formattedDate: formattedDate,
                     header: 'Shockin News',
                     image: 'assets/blog_images/joxa.jpg',),
-                Blogs(
+                Blogs(category: 'Industry',
                     formattedDate: formattedDate,
                     header: 'Shockin News',
                     image: 'assets/blog_images/joxa.jpg',),
-                Blogs(
+                Blogs(category: 'Industry',
                     formattedDate: formattedDate,
                     header: 'Shockin News',
                     image: 'assets/blog_images/joxa.jpg'),
-                Blogs(
+                Blogs(category: 'Industry',
                     formattedDate: formattedDate,
                     header: 'Shockin News',
                     image: 'assets/blog_images/joxa.jpg'),
-                Blogs(
+                Blogs(category: 'Industry',
                     formattedDate: formattedDate,
                     header: 'Shockin News',
                     image: 'assets/blog_images/joxa.jpg'),
-                Blogs(
+                Blogs(category: 'Industry',
                     formattedDate: formattedDate,
                     header: 'Shockin News',
                     image: 'assets/blog_images/joxa.jpg'),
-                Blogs(
+                Blogs(category: 'Industry',
                     formattedDate: formattedDate,
                     header: 'Shockin News',
                     image: 'assets/blog_images/joxa.jpg'),
               ],
             ),
           ),
-          Container(height: 98,padding: EdgeInsets.only(top: 20,bottom: 0,right: 10,left: 10),
+          Container(
+            height: 128,
+            margin: EdgeInsets.all(0),
             decoration: BoxDecoration(color: Colors.white),
-            child: Column(
+            child: const Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'Home',
-                      style: kTitleTextStyle,
+                    Padding(
+                      padding: EdgeInsets.only(left: 20.0,top: 50),
+                      child: Text(
+                        'Home',
+                        style: kTitleTextStyle,
+                      ),
                     ),
-                    Icon(BootstrapIcons.bell),
+                    Padding(
+                      padding: EdgeInsets.only(right: 20.0,top: 50),
+                      child: Icon(BootstrapIcons.bell),
+                    ),
                   ],
                 ),
                 SingleChildScrollView(
