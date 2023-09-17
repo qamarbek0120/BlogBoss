@@ -1,21 +1,20 @@
-import 'dart:ffi';
-import 'package:boss_blog/screens/components/essentials.dart';
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:boss_blog/constants.dart';
-import 'package:boss_blog/main.dart';
-import 'package:boss_blog/screens/components/list_page.dart';
-import 'package:boss_blog/screens/main_pages/profile_screen.dart';
+import 'package:boss_blog/screens/components/blogs.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'components/category_button.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:intl/intl.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   static const String id = 'HomeScreen';
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
+
+// String formattedDate = DateFormat.yMMMEd().format(DateTime.now());
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -39,55 +38,93 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
+            physics: BouncingScrollPhysics(),
             child: Row(
               children: [
-                Container(
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      '+',
-                      style: kParagraphTextStyle.copyWith(fontSize: 16),
-                    ),
-                    style: ButtonStyle(),
-                  ),
-                  decoration: BoxDecoration(
-                    border: Border(),
-                  ),
+                CategoryButton(category: '+'),
+                CategoryButton(
+                  category: 'Industry',
                 ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'For you',
-                    style: kParagraphTextStyle.copyWith(fontSize: 16),
-                  ),
+                CategoryButton(
+                  category: 'Industry',
                 ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Design',
-                    style: kParagraphTextStyle.copyWith(fontSize: 16),
-                  ),
+                CategoryButton(
+                  category: 'Industry',
                 ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Fashion',
-                    style: kParagraphTextStyle.copyWith(fontSize: 16),
-                  ),
+                CategoryButton(
+                  category: 'Industry',
                 ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'IT',
-                    style: kParagraphTextStyle.copyWith(fontSize: 16),
-                  ),
+                CategoryButton(
+                  category: 'Fashion',
                 ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Industry',
-                    style: kParagraphTextStyle.copyWith(fontSize: 16),
-                  ),
+                CategoryButton(
+                  category: 'Fashion',
+                ),
+                CategoryButton(
+                  category: 'Fashion',
+                ),
+                CategoryButton(
+                  category: 'Fashion',
+                ),
+                CategoryButton(
+                  category: 'News',
+                ),
+                CategoryButton(
+                  category: 'News',
+                ),
+                CategoryButton(
+                  category: 'News',
+                ),
+                CategoryButton(
+                  category: 'News',
+                ),
+                CategoryButton(
+                  category: 'News',
+                ),
+                CategoryButton(
+                  category: 'News',
+                ),
+                CategoryButton(
+                  category: 'News',
+                ),
+                CategoryButton(
+                  category: 'News',
+                ),
+                CategoryButton(
+                  category: 'News',
+                ),
+                CategoryButton(
+                  category: 'Blogs',
+                ),
+                CategoryButton(
+                  category: 'Blogs',
+                ),
+                CategoryButton(
+                  category: 'Blogs',
+                ),
+                CategoryButton(
+                  category: 'POV',
+                ),
+                CategoryButton(
+                  category: 'Government',
+                ),
+                CategoryButton(
+                  category: 'Government',
+                ),
+                CategoryButton(
+                  category: 'Government',
+                ),
+                CategoryButton(
+                  category: 'Politics',
+                ),
+                CategoryButton(
+                  category: 'Politics',
+                ),
+                CategoryButton(
+                  category: 'Politics',
+                ),
+                CategoryButton(
+                  category: 'Politics',
                 ),
               ],
             ),
@@ -97,11 +134,80 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 3,
             color: Colors.black26,
           ),
+          SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Column(
+                children: [
+                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
+                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
+                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
+                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
+                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
+                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
+                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
+                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
+                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
+                ],
+              ),
+            ),
+          )
         ],
       ),
-      bottomNavigationBar: BottomNavBar(activePage: 'HomeScreen',),
+      bottomNavigationBar: const GNav(
+        rippleColor: Colors.white70,
+        tabBorderRadius: 15,
+        curve: Curves.bounceIn,
+        // tab animation curves
+        duration: Duration(milliseconds: 800),
+        // tab animation duration
+        gap: 5,
+        // the tab button gap between icon and text
+        color: Colors.grey,
+        // unselected icon color
+        activeColor: Colors.black,
+        // selected icon and text color
+        iconSize: 35,
+        // tab button icon size
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        // navigation bar padding
+        tabs: [
+          GButton(
+            icon: Icons.house,
+            text: 'Home',textStyle: TextStyle(fontSize: 20),
+          ),
+          GButton(
+            icon: Icons.search,
+            text: 'Likes',textStyle: TextStyle(fontSize: 20),
+          ),
+          GButton(
+            icon: Icons.add_box_outlined,
+            text: 'Search',textStyle: TextStyle(fontSize: 20),
+          ),
+          GButton(
+            icon: Icons.person,
+            text: 'Profile',textStyle: TextStyle(fontSize: 20),
+          ),
+        ],
+      ),
     );
   }
 }
 
+class CategoryButton extends StatelessWidget {
+  final String category;
 
+  const CategoryButton({required this.category});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {},
+      child: Text(
+        category,
+        style: kParagraphTextStyle.copyWith(fontSize: 16),
+      ),
+    );
+  }
+}
