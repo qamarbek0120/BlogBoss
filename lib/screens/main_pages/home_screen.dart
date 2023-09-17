@@ -2,6 +2,7 @@ import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:boss_blog/constants.dart';
 import 'package:boss_blog/screens/components/blogs.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:intl/intl.dart';
 
@@ -20,139 +21,161 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
-          Padding(
-            padding:
-                const EdgeInsets.only(top: 60, right: 20, left: 20, bottom: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Home',
-                  style: kTitleTextStyle,
-                ),
-                Icon(BootstrapIcons.bell)
-              ],
-            ),
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            physics: BouncingScrollPhysics(),
-            child: Row(
-              children: [
-                CategoryButton(category: '+'),
-                CategoryButton(
-                  category: 'Industry',
-                ),
-                CategoryButton(
-                  category: 'Industry',
-                ),
-                CategoryButton(
-                  category: 'Industry',
-                ),
-                CategoryButton(
-                  category: 'Industry',
-                ),
-                CategoryButton(
-                  category: 'Fashion',
-                ),
-                CategoryButton(
-                  category: 'Fashion',
-                ),
-                CategoryButton(
-                  category: 'Fashion',
-                ),
-                CategoryButton(
-                  category: 'Fashion',
-                ),
-                CategoryButton(
-                  category: 'News',
-                ),
-                CategoryButton(
-                  category: 'News',
-                ),
-                CategoryButton(
-                  category: 'News',
-                ),
-                CategoryButton(
-                  category: 'News',
-                ),
-                CategoryButton(
-                  category: 'News',
-                ),
-                CategoryButton(
-                  category: 'News',
-                ),
-                CategoryButton(
-                  category: 'News',
-                ),
-                CategoryButton(
-                  category: 'News',
-                ),
-                CategoryButton(
-                  category: 'News',
-                ),
-                CategoryButton(
-                  category: 'Blogs',
-                ),
-                CategoryButton(
-                  category: 'Blogs',
-                ),
-                CategoryButton(
-                  category: 'Blogs',
-                ),
-                CategoryButton(
-                  category: 'POV',
-                ),
-                CategoryButton(
-                  category: 'Government',
-                ),
-                CategoryButton(
-                  category: 'Government',
-                ),
-                CategoryButton(
-                  category: 'Government',
-                ),
-                CategoryButton(
-                  category: 'Politics',
-                ),
-                CategoryButton(
-                  category: 'Politics',
-                ),
-                CategoryButton(
-                  category: 'Politics',
-                ),
-                CategoryButton(
-                  category: 'Politics',
-                ),
-              ],
-            ),
-          ),
-          Container(
-            width: double.infinity,
-            height: 3,
-            color: Colors.black26,
-          ),
           SingleChildScrollView(
             scrollDirection: Axis.vertical,
-            child: Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Column(
-                children: [
-                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
-                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
-                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
-                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
-                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
-                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
-                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
-                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
-                  Blogs(formattedDate: formattedDate, header: 'Shockin News', image: 'assets/blog_images/joxa.jpg'),
-                ],
-              ),
+            child: Column(
+              children: [
+                Blogs(
+                    formattedDate: formattedDate,
+                    header: 'Shockin News',
+                    image: 'assets/blog_images/joxa.jpg'),
+                Blogs(
+                    formattedDate: formattedDate,
+                    header: 'Shockin News',
+                    image: 'assets/blog_images/joxa.jpg'),
+                Blogs(
+                    formattedDate: formattedDate,
+                    header: 'Shockin News',
+                    image: 'assets/blog_images/joxa.jpg'),
+                Blogs(
+                    formattedDate: formattedDate,
+                    header: 'Shockin News',
+                    image: 'assets/blog_images/joxa.jpg'),
+                Blogs(
+                    formattedDate: formattedDate,
+                    header: 'Shockin News',
+                    image: 'assets/blog_images/joxa.jpg'),
+                Blogs(
+                    formattedDate: formattedDate,
+                    header: 'Shockin News',
+                    image: 'assets/blog_images/joxa.jpg'),
+                Blogs(
+                    formattedDate: formattedDate,
+                    header: 'Shockin News',
+                    image: 'assets/blog_images/joxa.jpg'),
+                Blogs(
+                    formattedDate: formattedDate,
+                    header: 'Shockin News',
+                    image: 'assets/blog_images/joxa.jpg'),
+                Blogs(
+                    formattedDate: formattedDate,
+                    header: 'Shockin News',
+                    image: 'assets/blog_images/joxa.jpg'),
+              ],
             ),
-          )
+          ),
+          Container(height: 98,padding: EdgeInsets.only(top: 20,bottom: 0,right: 10,left: 10),
+            decoration: BoxDecoration(color: Colors.white),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Home',
+                      style: kTitleTextStyle,
+                    ),
+                    Icon(BootstrapIcons.bell),
+                  ],
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  physics: BouncingScrollPhysics(),
+                  child: Row(
+                    children: [
+                      CategoryButton(category: '+'),
+                      CategoryButton(
+                        category: 'Industry',
+                      ),
+                      CategoryButton(
+                        category: 'Industry',
+                      ),
+                      CategoryButton(
+                        category: 'Industry',
+                      ),
+                      CategoryButton(
+                        category: 'Industry',
+                      ),
+                      CategoryButton(
+                        category: 'Fashion',
+                      ),
+                      CategoryButton(
+                        category: 'Fashion',
+                      ),
+                      CategoryButton(
+                        category: 'Fashion',
+                      ),
+                      CategoryButton(
+                        category: 'Fashion',
+                      ),
+                      CategoryButton(
+                        category: 'News',
+                      ),
+                      CategoryButton(
+                        category: 'News',
+                      ),
+                      CategoryButton(
+                        category: 'News',
+                      ),
+                      CategoryButton(
+                        category: 'News',
+                      ),
+                      CategoryButton(
+                        category: 'News',
+                      ),
+                      CategoryButton(
+                        category: 'News',
+                      ),
+                      CategoryButton(
+                        category: 'News',
+                      ),
+                      CategoryButton(
+                        category: 'News',
+                      ),
+                      CategoryButton(
+                        category: 'News',
+                      ),
+                      CategoryButton(
+                        category: 'Blogs',
+                      ),
+                      CategoryButton(
+                        category: 'Blogs',
+                      ),
+                      CategoryButton(
+                        category: 'Blogs',
+                      ),
+                      CategoryButton(
+                        category: 'POV',
+                      ),
+                      CategoryButton(
+                        category: 'Government',
+                      ),
+                      CategoryButton(
+                        category: 'Government',
+                      ),
+                      CategoryButton(
+                        category: 'Government',
+                      ),
+                      CategoryButton(
+                        category: 'Politics',
+                      ),
+                      CategoryButton(
+                        category: 'Politics',
+                      ),
+                      CategoryButton(
+                        category: 'Politics',
+                      ),
+                      CategoryButton(
+                        category: 'Politics',
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
       bottomNavigationBar: const GNav(
@@ -168,26 +191,30 @@ class _HomeScreenState extends State<HomeScreen> {
         // unselected icon color
         activeColor: Colors.black,
         // selected icon and text color
-        iconSize: 35,
+        iconSize: 25,
         // tab button icon size
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
         // navigation bar padding
         tabs: [
           GButton(
-            icon: Icons.house,
-            text: 'Home',textStyle: TextStyle(fontSize: 20),
+            icon: FontAwesomeIcons.house,
+            text: 'Home',
+            textStyle: TextStyle(fontSize: 20),
           ),
           GButton(
-            icon: Icons.search,
-            text: 'Likes',textStyle: TextStyle(fontSize: 20),
+            icon: FontAwesomeIcons.search,
+            text: 'Search',
+            textStyle: TextStyle(fontSize: 20),
           ),
           GButton(
-            icon: Icons.add_box_outlined,
-            text: 'Search',textStyle: TextStyle(fontSize: 20),
+            icon: FontAwesomeIcons.folderPlus,
+            text: 'Create',
+            textStyle: TextStyle(fontSize: 20),
           ),
           GButton(
-            icon: Icons.person,
-            text: 'Profile',textStyle: TextStyle(fontSize: 20),
+            icon: FontAwesomeIcons.user,
+            text: 'Profile',
+            textStyle: TextStyle(fontSize: 20),
           ),
         ],
       ),
@@ -203,6 +230,8 @@ class CategoryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
+      style:
+          ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.white)),
       onPressed: () {},
       child: Text(
         category,
