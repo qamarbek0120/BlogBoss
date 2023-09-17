@@ -1,4 +1,5 @@
 import 'package:boss_blog/screens/login_screen.dart';
+import 'package:boss_blog/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:boss_blog/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -56,7 +57,7 @@ class WelcomeScreen extends StatelessWidget {
                 colorr: Colors.white,
                 title: 'Sign Up',
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>RegistratioScreen()));
                 },
                 style: kOutlinedButtonStyle
                 ),

@@ -22,7 +22,7 @@ class BossBlog extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: true,
-      home:ProfilePage(),
+      home:OnboardingScreen(),
     );
   }
 }
