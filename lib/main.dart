@@ -24,7 +24,7 @@ class BossBlog extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: true,
-      home: HomeScreen(),
+      home: ProfilePage(),
     );
   }
 }

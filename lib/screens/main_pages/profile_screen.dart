@@ -5,6 +5,7 @@ import 'package:boss_blog/constants.dart';
 import 'package:boss_blog/screens/components/status_items.dart';
 import 'package:boss_blog/screens/components/essentials.dart';
 import 'package:intl/intl.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:boss_blog/screens/components/blogs.dart';
 import 'home_screen.dart';
 class ProfilePage extends StatefulWidget {
@@ -66,7 +67,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       )
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
@@ -81,7 +82,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                               borderRadius: BorderRadius.circular(60),
                               image: DecorationImage(
-                                  image: AssetImage('images/background.png'),
+                                  image: AssetImage('assets/blog_images/joxa.jpg'),
                                   fit: BoxFit.fill
                               ),
                             ),
@@ -174,7 +175,6 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                     Container(
-                      width: double.infinity,
                       height: 500,
                       decoration: BoxDecoration(
                           boxShadow: [
@@ -193,6 +193,42 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ),
       ),
+      bottomNavigationBar: GNav(
+        rippleColor: Colors.white70,
+        tabBorderRadius: 15,
+        curve: Curves.bounceIn,
+        // tab animation curves
+        duration: Duration(milliseconds: 800),
+        // tab animation duration
+        gap: 5,
+        // the tab button gap between icon and text
+        color: Colors.grey,
+        // unselected icon color
+        activeColor: Colors.black,
+        // selected icon and text color
+        iconSize: 35,
+        // tab button icon size
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        // navigation bar padding
+        tabs: [
+          GButton(
+            icon: Icons.house,
+            text: 'Home',textStyle: TextStyle(fontSize: 20),
+          ),
+          GButton(
+            icon: Icons.search,
+            text: 'Likes',textStyle: TextStyle(fontSize: 20),
+          ),
+          GButton(
+            icon: Icons.add_box_outlined,
+            text: 'Search',textStyle: TextStyle(fontSize: 20),
+          ),
+          GButton(
+            icon: Icons.person,
+            text: 'Profile',textStyle: TextStyle(fontSize: 20),
+          ),
+        ],
+    ),
     );
   }
 }
@@ -205,7 +241,6 @@ class Contents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
       child: PageView(
         controller: controller,
         children: [

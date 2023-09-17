@@ -30,19 +30,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 Blogs(
                     formattedDate: formattedDate,
                     header: 'Shockin News',
-                    image: 'assets/blog_images/joxa.jpg'),
+                    image: 'assets/blog_images/joxa.jpg',
+                    category: "Entertainment",
+                ),
                 Blogs(
                     formattedDate: formattedDate,
                     header: 'Shockin News',
-                    image: 'assets/blog_images/joxa.jpg'),
+                    image: 'assets/blog_images/joxa.jpg',
+                    category: "Entertainment",
+                ),
                 Blogs(
                     formattedDate: formattedDate,
                     header: 'Shockin News',
-                    image: 'assets/blog_images/joxa.jpg'),
+                    image: 'assets/blog_images/joxa.jpg',),
                 Blogs(
                     formattedDate: formattedDate,
                     header: 'Shockin News',
-                    image: 'assets/blog_images/joxa.jpg'),
+                    image: 'assets/blog_images/joxa.jpg',),
                 Blogs(
                     formattedDate: formattedDate,
                     header: 'Shockin News',

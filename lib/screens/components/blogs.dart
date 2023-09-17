@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:boss_blog/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class Blogs extends StatelessWidget {
-  Blogs({required this.formattedDate, required this.header, required this.image});
+  Blogs({required this.formattedDate, required this.header, required this.image, required this.category});
   final String formattedDate;
   final String header;
   final String image;
+  final String category;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class Blogs extends StatelessWidget {
                         child: Container(
                           width: 200,
                           child: Text(
-                            header,
+                            header!,
                             style: mainPersonStyle.copyWith(
                               fontFamily: 'sans-serif',
                               fontSize: 18,
@@ -61,7 +62,7 @@ class Blogs extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    formattedDate,
+                                    formattedDate!,
                                     style: TextStyle(
                                         fontWeight: FontWeight.normal,
                                         fontSize: 12,
@@ -77,7 +78,7 @@ class Blogs extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Category',
+                                    category!,
                                     style: TextStyle(
                                         fontWeight: FontWeight.normal,
                                         fontSize: 12,
@@ -106,7 +107,7 @@ class Blogs extends StatelessWidget {
                         height: 80,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage(image),
+                              image: AssetImage(image!),
                               fit: BoxFit.cover
                           ),
                           borderRadius: BorderRadius.all(Radius.circular(10)),

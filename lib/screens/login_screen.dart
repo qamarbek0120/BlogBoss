@@ -4,6 +4,7 @@ import 'package:boss_blog/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:boss_blog/constants.dart';
 import 'components/registration_form.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
