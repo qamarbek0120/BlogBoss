@@ -14,7 +14,6 @@ class ProfilePage extends StatefulWidget {
   State<ProfilePage> createState() => _ProfilePageState();
 }
 
-int _activePage = 0;
 final List<Widget> _pages = [
   const PageOne(),
   const PageTwo(),
