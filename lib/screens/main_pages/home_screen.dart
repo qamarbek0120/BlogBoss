@@ -1,6 +1,7 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:boss_blog/constants.dart';
 import 'package:boss_blog/screens/components/blogs.dart';
+import 'package:boss_blog/screens/main_pages/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -24,51 +25,54 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Stack(
           children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Column(
-                children: [
-                  Blogs(
-                      formattedDate: formattedDate,
-                      header: 'Shockin News',
-                      image: 'assets/blog_images/joxa.jpg',
-                      category: "Entertainment",
-                  ),
-                  Blogs(
-                      formattedDate: formattedDate,
-                      header: 'Shockin News',
-                      image: 'assets/blog_images/joxa.jpg',
-                      category: "Entertainment",
-                  ),
-                  Blogs(category: "Entertainment",
-                      formattedDate: formattedDate,
-                      header: 'Shockin News',
-                      image: 'assets/blog_images/joxa.jpg',),
-                  Blogs(category: 'Industry',
-                      formattedDate: formattedDate,
-                      header: 'Shockin News',
-                      image: 'assets/blog_images/joxa.jpg',),
-                  Blogs(category: 'Industry',
-                      formattedDate: formattedDate,
-                      header: 'Shockin News',
-                      image: 'assets/blog_images/joxa.jpg'),
-                  Blogs(category: 'Industry',
-                      formattedDate: formattedDate,
-                      header: 'Shockin News',
-                      image: 'assets/blog_images/joxa.jpg'),
-                  Blogs(category: 'Industry',
-                      formattedDate: formattedDate,
-                      header: 'Shockin News',
-                      image: 'assets/blog_images/joxa.jpg'),
-                  Blogs(category: 'Industry',
-                      formattedDate: formattedDate,
-                      header: 'Shockin News',
-                      image: 'assets/blog_images/joxa.jpg'),
-                  Blogs(category: 'Industry',
-                      formattedDate: formattedDate,
-                      header: 'Shockin News',
-                      image: 'assets/blog_images/joxa.jpg'),
-                ],
+            Padding(
+              padding: const EdgeInsets.only(top: 70.0),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  children: [
+                    Blogs(
+                        formattedDate: formattedDate,
+                        header: 'Shockin News',
+                        image: 'assets/blog_images/joxa.jpg',
+                        category: "Entertainment",
+                    ),
+                    Blogs(
+                        formattedDate: formattedDate,
+                        header: 'Shockin News',
+                        image: 'assets/blog_images/joxa.jpg',
+                        category: "Entertainment",
+                    ),
+                    Blogs(category: "Entertainment",
+                        formattedDate: formattedDate,
+                        header: 'Shockin News',
+                        image: 'assets/blog_images/joxa.jpg',),
+                    Blogs(category: 'Industry',
+                        formattedDate: formattedDate,
+                        header: 'Shockin News',
+                        image: 'assets/blog_images/joxa.jpg',),
+                    Blogs(category: 'Industry',
+                        formattedDate: formattedDate,
+                        header: 'Shockin News',
+                        image: 'assets/blog_images/joxa.jpg'),
+                    Blogs(category: 'Industry',
+                        formattedDate: formattedDate,
+                        header: 'Shockin News',
+                        image: 'assets/blog_images/joxa.jpg'),
+                    Blogs(category: 'Industry',
+                        formattedDate: formattedDate,
+                        header: 'Shockin News',
+                        image: 'assets/blog_images/joxa.jpg'),
+                    Blogs(category: 'Industry',
+                        formattedDate: formattedDate,
+                        header: 'Shockin News',
+                        image: 'assets/blog_images/joxa.jpg'),
+                    Blogs(category: 'Industry',
+                        formattedDate: formattedDate,
+                        header: 'Shockin News',
+                        image: 'assets/blog_images/joxa.jpg'),
+                  ],
+                ),
               ),
             ),
             Container(
