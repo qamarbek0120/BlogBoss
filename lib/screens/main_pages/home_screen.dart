@@ -112,15 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Row(
                       children: [
                         CategoryButton(category: '+'),
-                        CategoryButton(
-                          category: 'Industry',
-                        ),
-                        CategoryButton(
-                          category: 'Industry',
-                        ),
-                        CategoryButton(
-                          category: 'Industry',
-                        ),
+
                         CategoryButton(
                           category: 'Industry',
                         ),
@@ -128,46 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           category: 'Fashion',
                         ),
                         CategoryButton(
-                          category: 'Fashion',
-                        ),
-                        CategoryButton(
-                          category: 'Fashion',
-                        ),
-                        CategoryButton(
-                          category: 'Fashion',
-                        ),
-                        CategoryButton(
                           category: 'News',
-                        ),
-                        CategoryButton(
-                          category: 'News',
-                        ),
-                        CategoryButton(
-                          category: 'News',
-                        ),
-                        CategoryButton(
-                          category: 'News',
-                        ),
-                        CategoryButton(
-                          category: 'News',
-                        ),
-                        CategoryButton(
-                          category: 'News',
-                        ),
-                        CategoryButton(
-                          category: 'News',
-                        ),
-                        CategoryButton(
-                          category: 'News',
-                        ),
-                        CategoryButton(
-                          category: 'News',
-                        ),
-                        CategoryButton(
-                          category: 'Blogs',
-                        ),
-                        CategoryButton(
-                          category: 'Blogs',
                         ),
                         CategoryButton(
                           category: 'Blogs',
@@ -179,22 +132,25 @@ class _HomeScreenState extends State<HomeScreen> {
                           category: 'Government',
                         ),
                         CategoryButton(
-                          category: 'Government',
-                        ),
-                        CategoryButton(
-                          category: 'Government',
-                        ),
-                        CategoryButton(
                           category: 'Politics',
                         ),
                         CategoryButton(
-                          category: 'Politics',
+                          category: 'Countries',
                         ),
                         CategoryButton(
-                          category: 'Politics',
+                          category: 'Laugh',
                         ),
                         CategoryButton(
-                          category: 'Politics',
+                          category: 'Comedy',
+                        ),
+                        CategoryButton(
+                          category: 'Cinematograpy',
+                        ),
+                        CategoryButton(
+                          category: 'tragedy',
+                        ),
+                        CategoryButton(
+                          category: 'DIY',
                         ),
                       ],
                     ),
