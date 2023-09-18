@@ -9,7 +9,7 @@ import 'profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-  static const String id = 'HomeScreen';
+  static const String home = 'HomeScreen';
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 70.0),
+              padding: const EdgeInsets.only(top: 70.0,left: 10, right: 10),
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Column(

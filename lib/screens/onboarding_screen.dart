@@ -5,6 +5,7 @@ import 'package:boss_blog/components/rounded_button.dart';
 import 'components/list_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
+  static String onboarding = 'onboarding_screen';
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
@@ -92,10 +93,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         : 'Next',
                     onPressed: () {
                       if (currentIndex == content.length - 1) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => WelcomeScreen()));
+                        Navigator.pushNamed(context, WelcomeScreen.welcome);
                       }
                       _controller.nextPage(
                           duration: Duration(milliseconds: 200),

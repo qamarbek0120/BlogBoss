@@ -8,6 +8,7 @@ import 'package:boss_blog/components/rounded_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
+  static String welcome = 'welcome_screen';
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,7 @@ class WelcomeScreen extends StatelessWidget {
               colorr: kPrimaryColor,
               title: 'Log In',
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                Navigator.pushNamed(context, LoginScreen.login);
               },
               style: kFilledButtonStyle
             ),
@@ -57,7 +58,7 @@ class WelcomeScreen extends StatelessWidget {
                 colorr: Colors.white,
                 title: 'Sign Up',
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>RegistratioScreen()));
+                  Navigator.pushNamed(context, RegistrationScreen.registration);
                 },
                 style: kOutlinedButtonStyle
                 ),

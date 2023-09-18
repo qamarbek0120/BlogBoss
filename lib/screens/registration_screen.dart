@@ -1,11 +1,13 @@
 import 'package:boss_blog/screens/login_screen.dart';
+import 'package:boss_blog/screens/main_pages/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'components/registration_form.dart';
 import 'package:boss_blog/components/rounded_button.dart';
 import 'package:boss_blog/constants.dart';
 
-class RegistratioScreen extends StatelessWidget {
-  const RegistratioScreen({super.key});
+class RegistrationScreen extends StatelessWidget {
+  const RegistrationScreen({super.key});
+  static String registration = 'registration_screen';
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class RegistratioScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Container(
             width: double.infinity,
-            height: double.maxFinite,
+            height: MediaQuery.of(context).size.height,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -38,7 +40,7 @@ class RegistratioScreen extends StatelessWidget {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20.0),
-                                  child: RoundedButton(colorr: kPrimaryColor, title: 'Sign Up', onPressed: (){}, style: kFilledButtonStyle),
+                                  child: RoundedButton(colorr: kPrimaryColor, title: 'Sign Up', onPressed: (){Navigator.pushNamed(context, HomeScreen.home);}, style: kFilledButtonStyle),
                                 ),
                                 Column(
                                   children: <Widget>[
@@ -48,7 +50,7 @@ class RegistratioScreen extends StatelessWidget {
                                       children: <Widget>[
                                         TextButton(
                                             onPressed: (){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
+                                              Navigator.pushNamed(context, LoginScreen.login);
                                             },
                                             child: const Text(
                                               'Already have an account?',
