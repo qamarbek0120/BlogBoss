@@ -9,6 +9,7 @@ import 'package:boss_blog/screens/main_pages/home_screen.dart';
 
 class CreateScreen extends StatefulWidget {
   const CreateScreen({super.key});
+  static String id = 'create_screen';
 
   @override
   State<CreateScreen> createState() => _CreateScreenState();

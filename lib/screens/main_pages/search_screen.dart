@@ -8,6 +8,7 @@ import 'home_screen.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
+  static String id = "search_screen";
 
   @override
   State<SearchScreen> createState() => _SearchScreenState();

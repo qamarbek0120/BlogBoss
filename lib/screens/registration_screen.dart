@@ -7,7 +7,7 @@ import 'package:boss_blog/constants.dart';
 
 class RegistrationScreen extends StatelessWidget {
   const RegistrationScreen({super.key});
-  static String registration = 'registration_screen';
+  static String id = 'registration_screen';
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class RegistrationScreen extends StatelessWidget {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20.0),
-                                  child: RoundedButton(colorr: kPrimaryColor, title: 'Sign Up', onPressed: (){Navigator.pushNamed(context, HomeScreen.home);}, style: kFilledButtonStyle),
+                                  child: RoundedButton(colorr: kPrimaryColor, title: 'Sign Up', onPressed: (){Navigator.pushNamed(context, HomeScreen.id);}, style: kFilledButtonStyle),
                                 ),
                                 Column(
                                   children: <Widget>[
@@ -50,7 +50,7 @@ class RegistrationScreen extends StatelessWidget {
                                       children: <Widget>[
                                         TextButton(
                                             onPressed: (){
-                                              Navigator.pushNamed(context, LoginScreen.login);
+                                              Navigator.pushNamed(context, LoginScreen.id);
                                             },
                                             child: const Text(
                                               'Already have an account?',

@@ -29,16 +29,16 @@ class BossBlog extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: true,
-      initialRoute: OnboardingScreen.onboarding,
+      initialRoute: OnboardingScreen.id,
       routes: {
-        OnboardingScreen.onboarding: (context)=> OnboardingScreen(),
-        WelcomeScreen.welcome: (context)=> WelcomeScreen(),
-        LoginScreen.login: (context)=> LoginScreen(),
-        RegistrationScreen.registration: (context)=> RegistrationScreen(),
-        HomeScreen.home: (context)=> HomeScreen(),
-        SearchScreen.search: (context)=> SearchScreen(),
-        CreateScreen.create: (context)=> CreateScreen(),
-        ProfilePage.profile: (context)=> ProfilePage()
+        OnboardingScreen.id: (context)=> OnboardingScreen(),
+        WelcomeScreen.id: (context)=> WelcomeScreen(),
+        LoginScreen.id: (context)=> LoginScreen(),
+        RegistrationScreen.id: (context)=> RegistrationScreen(),
+        HomeScreen.id: (context)=> HomeScreen(),
+        SearchScreen.id: (context)=> SearchScreen(),
+        CreateScreen.id: (context)=> CreateScreen(),
+        ProfilePage.id: (context)=> ProfilePage()
 
       },
     );
