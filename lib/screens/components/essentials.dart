@@ -69,29 +69,19 @@ class PageTwo extends StatelessWidget {
   const PageTwo({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black12,
-
-      child: Column(
-        children: <Widget>[
-          Row(
-            children: [
-              Image.asset('assets/blog_images/joxa.jpg',width: 20,),
-              Column(
-                children: <Widget>[
-                  Text(
-                    'Main header',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15
-                    ),
-                  )
+    return Column(
+      children: [
+        Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  RepliedBlogs(),
+                  RepliedBlogs(),
+                  RepliedBlogs()
                 ],
-              )
-            ],
-          )
-        ],
-      ),
+              ),
+            )),
+      ],
     );
   }
 }
@@ -158,7 +148,137 @@ class _EssentialsState extends State<Essentials> {
             backgroundColor: Colors.white,
             elevation: 0,
             leading: IconButton(
-                onPressed: (){},
+                onPressed: (){
+                  showModalBottomSheet(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15)
+                      ),
+                      backgroundColor: Colors.white,
+                      barrierColor: Colors.black45,
+                      context: context,
+                      builder: (BuildContext context){
+                        return SizedBox(
+                          height: 600,
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Container(
+                                width: 150,
+                                height: 4,
+                                color: Colors.black45,
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              //some settings
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  elevation: 0,
+                                  backgroundColor: Colors.white70,
+                                ),
+                                  onPressed: (){},
+                                  child: Row(
+                                    children: [
+                                      Icon(FontAwesomeIcons.gear,color: kSecondaryColor,),
+                                      SizedBox(
+                                        width: 30,
+                                      ),
+                                      Text('Settings',style: TextStyle(color: kSecondaryColor, fontSize: 20, fontWeight: FontWeight.bold),)
+                                    ],
+                                  )
+                              ),
+                              ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      elevation: 0,
+                                      backgroundColor: Colors.white70
+                                  ),
+                                  onPressed: (){},
+                                  child: Row(
+                                    children: [
+                                      Icon(FontAwesomeIcons.businessTime,color: kSecondaryColor,),
+                                      SizedBox(
+                                        width: 30,
+                                      ),
+                                      Text('Your Status',style: TextStyle(color: kSecondaryColor, fontSize: 20, fontWeight: FontWeight.bold),)
+                                    ],
+                                  )
+                              ),
+                              ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      elevation: 0,
+                                      backgroundColor: Colors.white70
+                                  ),
+                                  onPressed: (){},
+                                  child: Row(
+                                    children: [
+                                      Icon(FontAwesomeIcons.user,color: kSecondaryColor,),
+                                      SizedBox(
+                                        width: 30,
+                                      ),
+                                      Text('Account',style: TextStyle(color: kSecondaryColor, fontSize: 20, fontWeight: FontWeight.bold),)
+                                    ],
+                                  )
+                              ),
+                              ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      elevation: 0,
+                                      backgroundColor: Colors.white70
+                                  ),
+                                  onPressed: (){},
+                                  child: Row(
+                                    children: [
+                                      Icon(FontAwesomeIcons.moon,color: kSecondaryColor,),
+                                      SizedBox(
+                                        width: 30,
+                                      ),
+                                      Text('Theme',style: TextStyle(color: kSecondaryColor, fontSize: 20, fontWeight: FontWeight.bold),)
+                                    ],
+                                  )
+                              ),
+                              ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      elevation: 0,
+                                      backgroundColor: Colors.white70
+                                  ),
+                                  onPressed: (){},
+                                  child: Row(
+                                    children: [
+                                      Icon(FontAwesomeIcons.circleInfo,color: kSecondaryColor,),
+                                      SizedBox(
+                                        width: 30,
+                                      ),
+                                      Text('Help',style: TextStyle(color: kSecondaryColor, fontSize: 20, fontWeight: FontWeight.bold),)
+                                    ],
+                                  )
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.red,
+                                  padding: EdgeInsets.all(20),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)
+                                  )
+                                ),
+                                  onPressed: (){},
+                                  child: Text(
+                                    'Sign Out',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20
+                                      )
+                                  ),)
+                            ],
+                          ),
+                        );
+                      }
+                  );
+                },
                 icon: Icon(FontAwesomeIcons.bars,color: kSecondaryColor)
             ),
           ),
@@ -169,6 +289,9 @@ class _EssentialsState extends State<Essentials> {
                 children: <Widget>[
                   Column(
                     children: <Widget>[
+                      SizedBox(
+                        height: 30,
+                      ),
                       Text('364',style: secondarystatusStyle,),
                       SizedBox(
                         height: 5,
@@ -177,7 +300,7 @@ class _EssentialsState extends State<Essentials> {
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: Container(
                       width: 100,
                       height: 100,
@@ -196,6 +319,9 @@ class _EssentialsState extends State<Essentials> {
                   ),
                   Column(
                     children: <Widget>[
+                      SizedBox(
+                        height: 30,
+                      ),
                       Text('200',style: secondarystatusStyle,),
                       SizedBox(
                         height: 5,

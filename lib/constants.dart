@@ -49,6 +49,17 @@ const secondarystatusStyle = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.w600
 );
+const mainFontsize = TextStyle(
+  color: kSecondaryColor,
+  fontSize: 25,
+  fontWeight: FontWeight.bold
+
+);
+const likeButtonStyle = TextStyle(
+  color: Colors.grey,
+  fontSize: 18,
+  fontWeight: FontWeight.w400
+);
 Color essentialColor = Colors.grey.shade300;
 const kPrimaryColor = Color(0xff4f85f6);
 const kSecondaryColor = Color(0xff18336f);
