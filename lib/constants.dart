@@ -1,6 +1,8 @@
 import 'dart:ui';
+import 'package:boss_blog/screens/main_pages/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'screens/components/essentials.dart';
 
 const kTitleTextStyle = TextStyle(
   color: Colors.black,
@@ -38,7 +40,7 @@ const followStyle = TextStyle(
   fontSize: 15
 );
 const primarystatusStyle = TextStyle(
-  color: Colors.white,
+  color: Colors.black,
   fontSize: 16,
   fontWeight: FontWeight.w600
 );
@@ -47,6 +49,7 @@ const secondarystatusStyle = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.w600
 );
+Color essentialColor = Colors.grey.shade300;
 const kPrimaryColor = Color(0xff4f85f6);
 const kSecondaryColor = Color(0xff18336f);
 const kBackgroundColor = Color(0xffefefef);

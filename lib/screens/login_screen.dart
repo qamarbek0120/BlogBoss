@@ -8,6 +8,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
+  static String login = 'login_screen';
 
   @override
   Widget build(BuildContext context) {
@@ -59,11 +60,7 @@ class LoginScreen extends StatelessWidget {
                                   colorr: kPrimaryColor,
                                   title: 'Log in',
                                   onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                HomeScreen()));
+                                    Navigator.pushNamed(context, HomeScreen.home);
                                   },
                                   style: kFilledButtonStyle),
                             ),
@@ -84,11 +81,7 @@ class LoginScreen extends StatelessWidget {
                                     ),
                                     TextButton(
                                         onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      RegistratioScreen()));
+                                          Navigator.pushNamed(context, RegistrationScreen.registration);
                                         },
                                         child: const Text(
                                           'Sign up',
