@@ -1,3 +1,4 @@
+import 'package:boss_blog/screens/main_pages/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -7,6 +8,7 @@ import 'package:boss_blog/screens/components/essentials.dart';
 import 'package:intl/intl.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:boss_blog/screens/components/blogs.dart';
+import 'create_screen.dart';
 import 'home_screen.dart';
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -193,63 +195,90 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ),
       bottomNavigationBar: GNav(
-        rippleColor: Colors.white70,
-        tabBorderRadius: 15,
-        curve: Curves.bounceIn,
-        // tab animation curves
+        tabBorderRadius: 20,
+        curve: Curves.easeInOutCubicEmphasized,
         duration: Duration(milliseconds: 800),
-        // tab animation duration
         gap: 5,
-        // the tab button gap between icon and text
         color: Colors.grey,
-        // unselected icon color
         activeColor: Colors.black,
-        // selected icon and text color
-        iconSize: 25,
-        // tab button icon size
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+        iconSize: 20,
+        haptic: true,
+        style: GnavStyle.oldSchool,
+        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
         // navigation bar padding
-        selectedIndex: _selectedIndex,
-        onTabChange: (index){
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
         tabs: [
           GButton(
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+            onPressed: () {
+              Navigator.push(context,
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) {
+                    return HomeScreen();
+                  },
+                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    );
+                  },
+                  transitionDuration: Duration(milliseconds: 0),
+                ),);
             },
             icon: FontAwesomeIcons.house,
             text: 'Home',
             textStyle: TextStyle(fontSize: 20),
           ),
           GButton(
+            onPressed: () {
+              Navigator.push(context,
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) {
+                    return SearchScreen();
+                  },
+                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    );
+                  },
+                  transitionDuration: Duration(milliseconds: 0),
+                ),);
+            },
             icon: FontAwesomeIcons.search,
             text: 'Search',
             textStyle: TextStyle(fontSize: 20),
           ),
           GButton(
+            onPressed: () {
+              Navigator.push(context,
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) {
+                    return CreateScreen();
+                  },
+                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    );
+                  },
+                  transitionDuration: Duration(milliseconds: 0),
+                ),);
+            },
             icon: FontAwesomeIcons.folderPlus,
             text: 'Create',
             textStyle: TextStyle(fontSize: 20),
           ),
           GButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ProfilePage()));
-            },
             icon: FontAwesomeIcons.user,
             text: 'Profile',
             textStyle: TextStyle(fontSize: 20),
           ),
         ],
-        // selectedIndex: _selectedIndex,
-        // onTabChange: (index) {
-        //   setState(() {
-        //     _selectedIndex = index;
-        //   });
-        // },
+        selectedIndex: _selectedIndex,
+        onTabChange: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
       ),
     );
   }
