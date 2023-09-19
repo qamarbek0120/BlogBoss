@@ -107,14 +107,14 @@ class Blogs extends StatelessWidget {
                         height: 80,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage(image!),
+                              image: AssetImage(image),
                               fit: BoxFit.cover
                           ),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
                         ),
                       ),
                     ],
-                  )
+                  ),
 
                 ],
               ),
@@ -123,6 +123,166 @@ class Blogs extends StatelessWidget {
         ),
       ),
 
+    );
+  }
+}
+
+class RepliedBlogs extends StatelessWidget {
+  const RepliedBlogs({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Container(
+        child: Column(
+          children: [
+            Row(
+              //  picture
+              children: [
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/blog_images/joxa.jpg',),
+                      ),
+                      borderRadius: BorderRadius.circular(50)
+                  ),
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text('Username', style: TextStyle(color: kSecondaryColor, fontSize: 15, fontWeight: FontWeight.w700),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text('Main header', style: TextStyle(
+                        color: kSecondaryColor,
+                        fontSize: 12,
+                        fontWeight: FontWeight.normal
+                    ),)
+                  ],
+                ),
+              ],
+              //  blog usrername
+              //  main header
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      width: 2,
+                      height: 300,
+                      color: Colors.grey.shade500,
+                    ),
+                    Container(
+                      height: 300,
+                      width: 300,
+                      decoration: BoxDecoration(
+                          color: Colors.grey.shade400,
+                          image: DecorationImage(
+                            image: AssetImage('assets/blog_images/image.jpg'),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.circular(10)
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 3,
+                    ),
+                    IconButton(
+                        onPressed: (){},
+                        icon: Icon(FontAwesomeIcons.heart)),
+                    IconButton(
+                        onPressed: (){},
+                        icon: Icon(FontAwesomeIcons.comment)),
+                    IconButton(
+                        onPressed: (){},
+                        icon: Icon(FontAwesomeIcons.share))
+                  ],
+                  //  Icons 3 (like, comment, share
+                ),
+                Row(
+                  //  number of likes
+                  children: [
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Text(
+                      '45', style: likeButtonStyle,
+                    ),
+                    Text('likes', style: likeButtonStyle,)
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              //  picture
+              children: [
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('images/logo.png'),
+                      ),
+                      borderRadius: BorderRadius.circular(50)
+                  ),
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text('Username', style: TextStyle(color: kSecondaryColor, fontSize: 15, fontWeight: FontWeight.w700),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text('Your reply', style: TextStyle(
+                        color: kSecondaryColor,
+                        fontSize: 15,
+                        fontWeight: FontWeight.normal
+                    ),)
+                  ],
+                ),
+              ],
+              //  blog usrername
+              //  main header
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              width: 400,
+              height: 2,
+              color: Colors.grey.shade400,
+            )
+          ],
+        ),
+
+      ),
     );
   }
 }
