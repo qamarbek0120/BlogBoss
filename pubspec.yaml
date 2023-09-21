@@ -99,6 +99,11 @@ fonts:
          - asset: Fonts/PlayfairDisplay-Medium.ttf
            style: medium
            weight: 500
+     - family: Montserrat
+       fonts:
+         - asset: Montserrat-Medium.ttf
+           style: medium
+           weight: 500
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

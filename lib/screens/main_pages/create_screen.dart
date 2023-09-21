@@ -1,14 +1,17 @@
 import 'package:boss_blog/constants.dart';
 import 'package:boss_blog/screens/main_pages/search_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:rive/rive.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:boss_blog/screens/main_pages/profile_screen.dart';
 import 'package:boss_blog/screens/main_pages/home_screen.dart';
+import 'package:rive/rive.dart';
 
 class CreateScreen extends StatefulWidget {
   const CreateScreen({super.key});
+
   static String id = 'create_screen';
 
   @override
@@ -17,7 +20,6 @@ class CreateScreen extends StatefulWidget {
 
 class _CreateScreenState extends State<CreateScreen> {
   int _selectedIndex = 2;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,19 +33,17 @@ class _CreateScreenState extends State<CreateScreen> {
         foregroundColor: Colors.black,
         elevation: 1,
       ),
-      body: Center(
-        child: Container(
-          child: Transform.scale(
+      body: Container(
+        child: Transform.scale(
             scale: 0.5,
             child: RiveAnimation.asset(
               'assets/rive/2359-4685-spinning-gears.riv',
-            ),
-          ),
-        ),
+              fit: BoxFit.scaleDown,alignment: Alignment.topCenter,
+            )),
       ),
       bottomSheet: Container(
         child: Padding(
-          padding: const EdgeInsets.only(bottom: 30.0),
+          padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height/4),
           child: Text(
             'The Page is under maintenance, for full experience of app you can visit www.bossblog.uz',
             textAlign: TextAlign.center,
@@ -66,19 +66,22 @@ class _CreateScreenState extends State<CreateScreen> {
         tabs: [
           GButton(
             onPressed: () {
-              Navigator.push(context,
+              Navigator.push(
+                context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) {
                     return HomeScreen();
                   },
-                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
                     return FadeTransition(
                       opacity: animation,
                       child: child,
                     );
                   },
                   transitionDuration: Duration(milliseconds: 0),
-                ),);
+                ),
+              );
             },
             icon: FontAwesomeIcons.house,
             text: 'Home',
@@ -86,19 +89,22 @@ class _CreateScreenState extends State<CreateScreen> {
           ),
           GButton(
             onPressed: () {
-              Navigator.push(context,
+              Navigator.push(
+                context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) {
                     return SearchScreen();
                   },
-                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
                     return FadeTransition(
                       opacity: animation,
                       child: child,
                     );
                   },
                   transitionDuration: Duration(milliseconds: 0),
-                ),);
+                ),
+              );
             },
             icon: FontAwesomeIcons.search,
             text: 'Search',
@@ -111,19 +117,22 @@ class _CreateScreenState extends State<CreateScreen> {
           ),
           GButton(
             onPressed: () {
-              Navigator.push(context,
+              Navigator.push(
+                context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) {
                     return ProfilePage();
                   },
-                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
                     return FadeTransition(
                       opacity: animation,
                       child: child,
                     );
                   },
                   transitionDuration: Duration(milliseconds: 0),
-                ),);
+                ),
+              );
             },
             icon: FontAwesomeIcons.user,
             text: 'Profile',

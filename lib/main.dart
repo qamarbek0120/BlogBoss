@@ -6,6 +6,7 @@ import 'package:boss_blog/screens/onboarding_screen.dart';
 import 'package:boss_blog/screens/registration_screen.dart';
 import 'package:boss_blog/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'screens/main_pages/profile_screen.dart';
 import 'screens/onboarding_screen.dart';
@@ -13,6 +14,7 @@ import 'screens/main_pages/search_screen.dart';
 
 void main() {
   runApp(const BossBlog());
+
 }
 
 class BossBlog extends StatelessWidget {
