@@ -17,53 +17,56 @@ class PageOne extends StatelessWidget {
   const PageOne({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SingleChildScrollView(scrollDirection: Axis.vertical,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 5.0),
-          child: Column(
-            children: <Widget>[
-              Blogs(
-                formattedDate: formattedDate,
-                header: 'Welcome',
-                image: 'assets/blog_images/image.jpg',
-                category: 'Entertainment',
-              ),
-              Blogs(
-                formattedDate: formattedDate,
-                header: 'Welcome',
-                image: 'images/logo1.png',
-                category: 'Entertainment'
-              ),
-              Blogs(
-                formattedDate: formattedDate,
-                header: 'Welcome',
-                image: 'assets/blog_images/image.jpg',
-                category: 'Entertainment',
-              ),
-              Blogs(
-                formattedDate: formattedDate,
-                header: 'Welcome',
-                image: 'images/logo1.png',
-                category: 'Entertainment',
-              ),
-              Blogs(
-                formattedDate: formattedDate,
-                header: 'Welcome',
-                image: 'assets/blog_images/image.jpg',
-                category: 'Entertainment',
-              ),
-              Blogs(
-                formattedDate: formattedDate,
-                header: 'Welcome',
-                image: 'assets/blog_images/image.jpg',
-                category: 'Entertainment',
-              ),
-            ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        child: SingleChildScrollView(scrollDirection: Axis.vertical,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            child: Column(
+              children: <Widget>[
+                Blogs(
+                  formattedDate: formattedDate,
+                  header: 'Welcome',
+                  image: 'assets/blog_images/image.jpg',
+                  category: 'Entertainment',
+                ),
+                Blogs(
+                  formattedDate: formattedDate,
+                  header: 'Welcome',
+                  image: 'images/logo1.png',
+                  category: 'Entertainment'
+                ),
+                Blogs(
+                  formattedDate: formattedDate,
+                  header: 'Welcome',
+                  image: 'assets/blog_images/image.jpg',
+                  category: 'Entertainment',
+                ),
+                Blogs(
+                  formattedDate: formattedDate,
+                  header: 'Welcome',
+                  image: 'images/logo1.png',
+                  category: 'Entertainment',
+                ),
+                Blogs(
+                  formattedDate: formattedDate,
+                  header: 'Welcome',
+                  image: 'assets/blog_images/image.jpg',
+                  category: 'Entertainment',
+                ),
+                Blogs(
+                  formattedDate: formattedDate,
+                  header: 'Welcome',
+                  image: 'assets/blog_images/image.jpg',
+                  category: 'Entertainment',
+                ),
+              ],
+            ),
           ),
-        ),
-      )
+        )
 
+      ),
     );
   }
 }

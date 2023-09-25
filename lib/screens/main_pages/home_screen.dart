@@ -4,6 +4,7 @@ import 'package:boss_blog/screens/components/blogs.dart';
 import 'package:boss_blog/screens/components/essentials.dart';
 import 'package:boss_blog/screens/main_pages/profile_screen.dart';
 import 'package:boss_blog/screens/main_pages/search_screen.dart';
+import 'package:boss_blog/screens/main_pages/secondary_pages/notifications_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -59,7 +60,13 @@ class _HomeScreenState extends State<HomeScreen>
             padding: EdgeInsets.only(
                 top: MediaQuery.of(context).size.height / 30,
                 right: MediaQuery.of(context).size.height / 40),
-            child: Icon(FontAwesomeIcons.bell),
+            child: GestureDetector(
+              child: Icon(FontAwesomeIcons.bell),
+              onTap: () {Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NotificationScreen()),
+              );},
+            ),
           )
         ],
         automaticallyImplyLeading: false,
