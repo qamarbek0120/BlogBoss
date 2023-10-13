@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:boss_blog/constants.dart';
 import 'package:boss_blog/screens/registration_screen.dart';
+import 'package:boss_blog/components/user.dart';
 
 class registration_form extends StatelessWidget {
   registration_form({required this.mainTitle, required this.reference});
@@ -31,14 +32,16 @@ class registration_form extends StatelessWidget {
 }
 
 class login_button extends StatelessWidget {
-  login_button({required this.input});
-  final String input;
+  login_button({this.input,this.control});
+  final String? input;
+  final TextEditingController? control;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 40),
       child: TextField(
+        controller: control,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
             hintText: input,

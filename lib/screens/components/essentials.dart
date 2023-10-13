@@ -1,4 +1,5 @@
 import 'dart:ffi';
+import 'package:boss_blog/screens/login_screen.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:boss_blog/screens/components/blogs.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,6 +13,7 @@ import 'package:boss_blog/screens/main_pages/profile_screen.dart';
 import 'package:boss_blog/screens/components/blogs.dart';
 import 'package:boss_blog/screens/main_pages/create_screen.dart';
 import 'package:boss_blog/screens/main_pages/search_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PageOne extends StatelessWidget {
   const PageOne({super.key});
@@ -97,9 +99,18 @@ class PageThree extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      color: Colors.green,
-      child: Text(
-        'Three',style: TextStyle(color: Colors.white, fontSize: 40),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          children: [
+            Blogs(
+              formattedDate: formattedDate,
+              header: 'Welcome',
+              image: 'assets/blog_images/image.jpg',
+              category: 'Entertainment',
+            ),
+          ],
+        ),
       ),
     );;
   }
@@ -144,6 +155,14 @@ final List<Widget> tabBarViews = [
 int _selectedIndex = 0;
 
 class _EssentialsState extends State<Essentials> {
+  Future<void> _signOut() async {
+    // Clear user authentication data from local storage
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.remove('authToken'); // Assuming 'authToken' is the key used to store the user's token
+
+    // Navigate to the login page or perform any other action after sign-out
+    Navigator.pushReplacementNamed(context, '/login'); // Replace '/login' with your actual login route
+  }
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -269,7 +288,10 @@ class _EssentialsState extends State<Essentials> {
                                     borderRadius: BorderRadius.circular(20)
                                   )
                                 ),
-                                  onPressed: (){},
+                                  onPressed: (){
+                                  _signOut();
+                                  Navigator.pushNamed(context, LoginScreen.id);
+                                  },
                                   child: Text(
                                     'Sign Out',
                                       style: TextStyle(

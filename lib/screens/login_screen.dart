@@ -5,11 +5,57 @@ import 'package:flutter/material.dart';
 import 'package:boss_blog/constants.dart';
 import 'components/registration_form.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:boss_blog/components/user.dart';
 
-class LoginScreen extends StatelessWidget {
+
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
   static String id = 'login_screen';
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  Future<void> _login() async {
+    final String apiUrl = 'https://api.bossblog.uz/api/v1/users/auth/signin';
+    final response = await http.post(Uri.parse(apiUrl),
+        body: json.encode(User(
+            usernameOrEmail: usernameController.text,
+            password: passwordController.text)),
+        headers: {'Content-Type': 'application/json'});
+
+    if (response.statusCode == 200) {
+      // Login successful, handle the response accordingly
+      Navigator.pushNamed(context, HomeScreen.id);
+      print('Login successful');
+    } else {
+      // Login failed, handle the errors
+      showDialog(
+          context: context,
+          builder: (BuildContext context){
+            return AlertDialog(
+              title: Text('Login failed'),
+              content: Text('Invalid username or password. Please, try again later'),
+              actions: <Widget>[
+                TextButton(
+                    onPressed: (){
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('Ok')
+                )
+              ],
+            );
+          }
+      );
+      print('Login failed');
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,8 +97,8 @@ class LoginScreen extends StatelessWidget {
                       Container(
                         child: Column(
                           children: <Widget>[
-                            login_button(input: "Name"),
-                            login_button(input: 'Password'),
+                            login_button(input: "Name", control: usernameController,),
+                            login_button(input: 'Password',control: passwordController,),
                             Padding(
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10, horizontal: 20.0),
@@ -60,7 +106,7 @@ class LoginScreen extends StatelessWidget {
                                   colorr: kPrimaryColor,
                                   title: 'Log in',
                                   onPressed: () {
-                                    Navigator.pushNamed(context, HomeScreen.id);
+                                    _login();
                                   },
                                   style: kFilledButtonStyle),
                             ),
@@ -69,7 +115,7 @@ class LoginScreen extends StatelessWidget {
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
+                                  MainAxisAlignment.spaceEvenly,
                                   children: <Widget>[
                                     const Text(
                                       'Don`t have an account?',
@@ -117,3 +163,4 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+
