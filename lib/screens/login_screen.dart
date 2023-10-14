@@ -97,8 +97,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       Container(
                         child: Column(
                           children: <Widget>[
-                            login_button(input: "Name", control: usernameController,),
-                            login_button(input: 'Password',control: passwordController,),
+                            login_button(input: "Name", control: usernameController),
+                            PasswordFieldButton(input: "Password", control: passwordController,),
                             Padding(
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10, horizontal: 20.0),

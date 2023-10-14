@@ -18,28 +18,29 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  final TextEditingController usernameController = TextEditingController();
   final TextEditingController fullNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController = TextEditingController();
-  final TextEditingController newUsernameController = TextEditingController();
   Future<void> _signup() async {
     final String apiUrl = 'https://api.bossblog.uz/api/v1/users/auth/signup';
     final response = await http.post(Uri.parse(apiUrl),
         body: json.encode(User(
+            username: usernameController.text,
             fullName: fullNameController.text,
             email: emailController.text,
             password: passwordController.text,
-            confirmPassword: confirmPasswordController.text,
-            newUsername: newUsernameController.text)),
+            confirmPassword: confirmPasswordController.text)),
         headers: {'Content-Type': 'application/json'});
 
-    if (response.statusCode == 200) {
+    if (response.statusCode > 200 && response.statusCode < 400) {
       // Signup successful, handle the response accordingly
-      Navigator.pushNamed(context, LoginScreen.id);
       print('Signup successful');
+      print(response.statusCode);
       Navigator.pushNamed(context, HomeScreen.id);
     } else {
+      print(response.statusCode);
       // Signup failed, handle the error
       showDialog(
           context: context,
@@ -83,11 +84,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       Container(
                         child: Column(
                           children: <Widget>[
+                            login_button(input: 'new Username', control: usernameController,),
                             login_button(input: "Enter E-mail", control: emailController,),
                             login_button(input: 'Enter your full name', control: fullNameController,),
-                            login_button(input: 'Create a password', control: passwordController,),
-                            login_button(input: 'Confirm password', control: confirmPasswordController,),
-                            login_button(input: 'new Username', control: newUsernameController,),
+                            PasswordFieldButton(input: 'Create a password', control: passwordController,),
+                            PasswordFieldButton(input: 'Confirm password', control: confirmPasswordController,),
                             Column(
                               children: [
                                 Padding(
@@ -102,7 +103,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                       children: <Widget>[
                                         TextButton(
                                             onPressed: (){
-                                              _signup();
+                                              Navigator.pushNamed(context, LoginScreen.id);
                                             },
                                             child: const Text(
                                               'Already have an account?',
